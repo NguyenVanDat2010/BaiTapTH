@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Các hàm hiển thị</title>
+</head>
+<body>
+
+<!--Hiển thị kết quả sử dụng hàm alert():-->
+<button type="button" onclick="showMassage();">Click me</button>
+<script>
+    function showMassage() {
+        alert("Xin chào!");
+    }
+</script>
+<br><br>
+
+<!--Hiển thị sử dụng thẻ Html-->
+<div id="messageDiv"></div>
+<button type="button" onclick="showMassage1();">Click me</button>
+<script>
+    function showMassage1() {
+        document.getElementById("messageDiv").innerHTML='Xin chào!';
+    }
+</script>
+<br><br>
+
+<!--Hiển thị kết quả sử dụng hàm document.write():-->
+<button type="button" onclick="showMassage2();">Click me</button>
+<script>
+    function showMassage2() {
+        document.write("Xin chào");
+    }
+</script>
+<br><br>
+
+<!--Hiển thị kết quả sử dụng hàm cosole.log();-->
+<button type="button" onclick="showMassage3();">Click me</button>
+<script>
+    function showMassage3() {
+        console.log("Xin chào");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Switch Case trong JavaScrip</title>
+</head>
+<body>
+<script type="text/javascript" language="JavaScript">
+    switch (new Date().getDay()) {
+        case 0:
+            day = "Chủ Nhật";
+            break;
+        case 1:
+            day = "Thứ hai";
+            break;
+        case 2:
+            day = "Thứ ba";
+            break;
+        case 3:
+            day = "Thứ tư";
+            break;
+        case 4:
+            day = "Thứ năm";
+            break;
+        case 5:
+            day = "Thứ sáu";
+            break;
+        case 6:
+            day = "Thứ bảy";
+            break;
+    }
+    switch (new Date().getDay()) {
+        case 1:
+        case 2:
+        case 3:
+        default:
+            text = "Looking forward to the Weekend";
+            break;
+        case 4:
+        case 5:
+            text = "Soon it is Weekend";
+            break;
+        case 0:
+        case 6:
+            text = "It is Weekend";
+    }
+    let day = "Mon";
+    let message = "";
+
+    switch (day) {
+        case "Mon":
+            message = "Ngày đầu tuần";
+
+        case "Wed":
+            message = "Ngày giữa tuần";
+
+        case "Sat":
+        case "Sun":
+            message = "Ngày nghỉ";
+    }
+</script>
+</body>
+</html>

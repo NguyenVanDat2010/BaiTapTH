@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+<h3>Caculator</h3>
+<input id="number1"> <input id="number2">
+<br><br>
+<label>Các phép toán:</label><br><br>
+<button onclick="showAddition();">Addition(+)</button>
+<button onclick="showSubtraction();">Subtraction(-)</button>
+<button onclick="showMultiplication();">Multiplication(*)</button>
+<button onclick="showDivision();">Division(/)</button><br><br>
+<span id="result"></span>
+<!--<span id="remainder"></span>-->
+<br>
+
+<script>
+    let number1,number2,result;
+    function showAddition(){
+        number1=document.getElementById("number1").value;
+        number2=document.getElementById("number2").value;
+        if(number1 === '' || number2 ==='' || number1 === number2 === ''){
+            result="Bạn chưa nhập hoặc nhập thiếu giá trị"
+        }else {
+            let num1=parseInt(number1);
+            let num2=parseInt(number2);
+            result=num1+num2;
+        }
+        document.getElementById("result").innerText="Kết quả là: "+result;
+    }
+    function showSubtraction(){
+        number1=document.getElementById("number1").value;
+        number2=document.getElementById("number2").value;
+        if(number1 === '' || number2 === '' || number1 === number2 === ''){
+            result="Bạn chưa nhập hoặc nhập thiếu giá trị"
+        }else {
+            let num1=parseInt(number1);
+            let num2=parseInt(number2);
+            result=num1-num2;
+        }
+        document.getElementById("result").innerText="Kết quả là: "+result;
+    }
+    function showMultiplication(){
+        number1=document.getElementById("number1").value;
+        number2=document.getElementById("number2").value;
+        if(number1 === '' || number2 === '' || number1 === number2 === ''){
+            result="Bạn chưa nhập hoặc nhập thiếu giá trị"
+        }else {
+            let num1=parseInt(number1);
+            let num2=parseInt(number2);
+            result=num1*num2;
+        }
+        document.getElementById("result").innerText="Kết quả là: "+result;
+        //alert("Kết quả là: "+result);
+    }
+    function showDivision(){
+        //let remainder; phép lấy dư
+        number1=document.getElementById("number1").value;
+        number2=document.getElementById("number2").value;
+        if(number1 === '' || number2 === '' || number1 === number2 === ''){
+            result="Bạn chưa nhập hoặc nhập thiếu giá trị"
+        }else {
+            let num1=parseInt(number1);
+            let num2=parseInt(number2);
+            result=num1/num2;
+            //remainder=num1%num2;
+        }
+        document.getElementById("result").innerText="Kết quả là: "+result;
+        //document.getElementById("remainder").innerText="Dư: "+remainder;
+    }
+</script>
+</body>
+</html>

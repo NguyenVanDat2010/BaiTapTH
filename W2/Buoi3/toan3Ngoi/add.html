@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toán tử 3 ngôi</title>
+</head>
+<body>
+<script>
+    // Toán tử 3 ngôi có thể dùng thay cho if else
+    // Biến = ( điều kiện )? (Lệnh1 thực thi nếu đk đúng) : (lệnh 2 thực thi nếu đk sai);
+
+
+
+    //Bài 01:Viết chương trình nhập vào giá trị cho a và b. Tính tổng a và b, nếu tổng nhỏ hơn 4, hiển thị chuỗi Below,
+    // ngược lại hiển thị Over. Lưu ý sử dụng toán tử ?
+    let a = Number(prompt("Nhập giá trị a: "));
+    let b = Number(prompt("Nhập giá trị b: "));
+    let result = ((a+b)<4) ? 'Below' : 'Over';
+    alert(result);
+
+
+
+    //Bài 02:Viết chương trình nhập vào giá trị cho chuỗi message. Nếu giá trị nhập vào là Employee thì hiển thị chuỗi Hello.
+    // Còn lại nếu giá trị nhập vào là Director thì hiển thị chuỗi GreetingsCòn lại nếu giá trị nhập vào chuỗi rỗng thì hiển thị No login
+    // Còn lại hiển thị chuỗi rỗng
+
+    let login = prompt("Nhập chuỗi: ")
+     let massage = (login == 'Employee')?
+        'Hello' :
+        (login =='Director')?
+            'Greetingg':
+            (login == '')?
+                'No login':
+                '';
+    alert(massage);
+
+</script>
+</body>
+</html>

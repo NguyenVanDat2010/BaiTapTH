@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+<script>
+    let  userName;
+    userName=prompt("Nhập tên người dùng: ");
+    if(userName == "Admin"){
+        let password=prompt("Vui lòng nhập mật khẩu: ");
+        if(password == "TheMaster") {
+            alert("Welcome!");
+        }
+        else
+            if (password == null){
+            alert("Canceled");
+            }
+            else {
+                alert("Wrong password");
+            }
+    }else
+        if (userName == null){
+            alert("Canceled");
+        }
+        else {
+            alert("I don't know you");
+        }
+</script>
+</body>
+</html>
