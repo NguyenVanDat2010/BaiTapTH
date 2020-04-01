@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự kện bàn phím</title>
+</head>
+<body onload="doReady()">
+<form>
+    <img src="nobita.png" id="nobita" style="position: absolute; left: 0;top: 0;" width="150px" alt="Error">
+    <br><br><br> <br><br><br> <br><br><br> <br><br><br>
+    <p>Click on some buttons bellow or hit on the keyboard to move Nobita piture</p>
+    <input type="button" value="Go left" id ="left" onclick="goLeft();">
+    <input type="button" value="Go right" id ="right" onclick="goRight();">
+    <input type="button" value="Go up" id ="up" onclick="goUp();">
+    <input type="button" value="Go down" id ="down" onclick="goDown();">
+</form>
+
+<script>
+    function goLeft() {
+        let left= document.getElementById("nobita");
+        left.style.left=parseInt(left.style.left) - 10 +'px';
+    }
+    function goRight() {
+        let right=document.getElementById("nobita");
+        right.style.left=parseInt(right.style.left) + 10 +'px';
+    }
+    function goUp() {
+        let up=document.getElementById("nobita");
+        up.style.top=parseInt(up.style.top) - 10 +'px';
+    }
+    function goDown() {
+        let down = document.getElementById("nobita");
+        down.style.top=parseInt(down.style.top)+ 10 +'px';
+    }
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 37 :
+                goLeft();
+                break;
+            case  39 :
+                goRight();
+                break;
+            case 38 :
+                goUp();
+                break;
+            case 40 :
+                goDown();
+                break;
+        }
+    }
+    function doReady() {
+        window.addEventListener('keydown', moveSelection);
+    }
+</script>
+</body>
+</html>
