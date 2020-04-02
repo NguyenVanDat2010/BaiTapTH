@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vòng lặp lồng nhau</title>
+</head>
+<body>
+<script>
+    //Vòng lặp for: Chương trình hiển thị bảng với dữ liệu như sau
+    let sout;
+    sout = "<table border='1' width='300' cellspacing='0' cellpadding='3'>"
+    for (let i1 = 1; i1 <= 10; i1++) {
+        sout = sout + "<tr>";
+        for (let j1 = 1; j1 <= 10; j1++) {
+            sout = sout + "<td>" + i1 * j1 + "</td>";
+        }
+        sout = sout + "</tr>";
+    }
+    sout = sout + "</table>";
+    document.write(sout);
+
+
+    //Vòng lặp while
+    let bang="<table border ='1' width='300' cellspacing='0' cellpadding='3'>";
+    let i=1,j=1;
+    while (i<=10){
+        bang=bang+"<tr>";
+        while (j<=10){
+            bang=bang+"<td>"+i*j+"</td>";
+            j++;
+        }
+        bang=bang+"</tr>";
+        i++;
+        j=1;
+    }
+    bang=bang+"</table>";
+    document.write(bang);
+</script>
+</body>
+</html>
