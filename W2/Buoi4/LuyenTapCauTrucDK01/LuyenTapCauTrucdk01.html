@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 01</title>
+</head>
+<body>
+<script>
+    //bài 01: Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không
+    let a=Number(prompt("Nhập a: "));
+    let b=Number(prompt("Nhập b: "));
+    let c=a%b==0;
+    if(c){
+        alert(a+" chia hết cho "+b);
+    }
+    else {
+        alert(a+" không chia hết cho "+b);
+    }
+
+    //bài 2: Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.
+    let age=Number(prompt("Nhập tuổi: "));
+    if(age<15){
+        alert("Bạn không đủ tuổi học lớp 10");
+    }
+    else if(age<25){
+        alert("Bạn đủ tuổi học lớp 10.");
+    }
+    else {
+        alert("Bạn đã quá già để học lớp 10.");
+    }
+
+    //Bài 03: Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0
+    let soNguyen=Number(prompt("Nhập một só bất kỳ: "));
+    if(soNguyen>0){
+        alert(soNguyen+" lớn hơn 0");
+    }else {
+        alert(soNguyen+" bé hơn 0");
+    }
+
+    //bài 04: Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó
+    let soNguyen1,soNguyen2,soNguyen3;
+    soNguyen1=Number(prompt("Nhập một số nguyên a bất kỳ: "));
+    soNguyen2=Number(prompt("Nhập một số nguyên b bất kỳ: "));
+    soNguyen3=Number(prompt("Nhập một số nguyên c bất kỳ: "));
+    if(soNguyen1>soNguyen2){
+        if(soNguyen1>soNguyen3) {
+            alert(soNguyen1 + " là số lớn nhất.");
+        }else{
+            alert(soNguyen3+ " là số lớn nhất.");
+        }
+    }else
+        if(soNguyen2>soNguyen3){
+            alert(soNguyen2+" là số lớn nhất.");
+        }else {
+            alert(soNguyen3+" là số lớn nhất.");
+        }
+
+    //Bài 05: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ
+    let diemKiemTra =Number(prompt("Nhập điểm kiểm tra: "));
+    let diemGiuaKy =Number(prompt("nhập điểm giữa kỳ: "));
+    let diemCuoiKy = Number(prompt("Nhập điểm cuối kỳ: "));
+    if(diemKiemTra<100 && diemGiuaKy<100 && diemGiuaKy<100){
+    let diemTrungBinh = (diemKiemTra+diemGiuaKy+diemCuoiKy)/3;
+    if(diemTrungBinh<50){
+        alert(diemTrungBinh+ " điểm là hạng F.")
+    }else if(diemTrungBinh<60){
+        alert(diemTrungBinh+ " điểm là hạng D")
+    }else  if(diemTrungBinh<70){
+        alert(diemTrungBinh+ " điểm là hạng C")
+    }else  if(diemTrungBinh<85){
+        alert(diemTrungBinh+ " điểm là hạng B")
+    }else {
+        alert(diemTrungBinh+ " điểm là hạng A")
+    }
+    }else {
+        alert("Điểm nhập vào phải bé hơn 100.")
+    }
+
+    //bài 06: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng
+    let doanhSo= Number(prompt("Nhập doanh thu tháng này của bạn (triệu đồng): "));
+    let hoaHong;
+    if(doanhSo<=100){
+        hoaHong=(doanhSo*5)/100;
+    }else if(doanhSo<=300){
+        hoaHong=(doanhSo*10)/100;
+
+    }else {
+        hoaHong=(doanhSo*20)/100;
+    }
+    alert("Tiền % hoa hồng của bạn là: "+hoaHong+" triệu đồng");
+
+    //bài 07: Tính cước điện thoại cho một hộ gia đình với các thông số đã cho
+    let phiThueBao=25000;
+    let cuocThueBao;
+    let soPhutGoi=Number(prompt("Nhập số phút đã sử sụng (phút): "));
+    if(soPhutGoi>200){
+        cuocThueBao=(soPhutGoi-200)*200+phiThueBao+(150*400)+(50*600);
+    }else if(soPhutGoi<=200){
+        cuocThueBao=(soPhutGoi-50)*400+phiThueBao+(50*600);
+    }else {
+        cuocThueBao=soPhutGoi*600+phiThueBao;
+    }
+    alert("Bạn đã gọi "+soPhutGoi+ " phút, cước thuê bao của bạn là (vnd): "+cuocThueBao);
+
+</script>
+</body>
+</html>
