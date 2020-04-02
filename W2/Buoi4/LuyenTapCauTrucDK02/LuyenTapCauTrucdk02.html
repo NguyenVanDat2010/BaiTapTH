@@ -6,115 +6,115 @@
 </head>
 <body>
 <script>
-    //bai 01:
-    // let doC =Number(prompt("Nhập số độ C: "));
-    // let doF = doC*1.8+32;
-    // alert(doC+ " độ C chuyển sang độ F là: "+doF);
+    //bai 01: Chuyển từ độ C sang độ F.
+    let doC =Number(prompt("Nhập số độ C: "));
+    let doF = doC*1.8+32;
+    alert(doC+ " độ C chuyển sang độ F là: "+doF);
 
-    //bai  02:
-    // let meter = Number(prompt("Nhập số m: "));
-    // let feet=meter*3.2808;
-    // alert(meter+" mét chuyển sang feet là: "+ feet);
+    //bai  02: Chuyển từ mét sang feet:
+    let meter = Number(prompt("Nhập số m: "));
+    let feet=meter*3.2808;
+    alert(meter+" mét chuyển sang feet là: "+ feet);
 
-    //bài 03:
-    // let canhA = Number(prompt("Nhập cạnh a: "));
-    // let dienTichHinhVuong=canhA*canhA;
-    // alert("Hình vuông có canh là "+canhA+" có diện tích là: "+dienTichHinhVuong+ "m2");
+    //bài 03: Tính diện tích hình vuông khi biết cạnh a.
+    let canhA = Number(prompt("Nhập cạnh a: "));
+    let dienTichHinhVuong=canhA*canhA;
+    alert("Hình vuông có canh là "+canhA+" có diện tích là: "+dienTichHinhVuong+ "m2");
 
-    //bai 04
-    // let chieuDai = Number(prompt("Nhập chiều dài: "));
-    // let chieuRong = Number(prompt("Nhập chiều rộng: "));
-    // let dienTichHcn = chieuDai*chieuRong;
-    // alert("HCN có chiều dài "+chieuDai+" m và chiều rộng "+chieuRong+" m, có diện tích là: "+dienTichHcn+" m2");
+    //bai 04: Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.
+    let chieuDai = Number(prompt("Nhập chiều dài: "));
+    let chieuRong = Number(prompt("Nhập chiều rộng: "));
+    let dienTichHcn = chieuDai*chieuRong;
+    alert("HCN có chiều dài "+chieuDai+" m và chiều rộng "+chieuRong+" m, có diện tích là: "+dienTichHcn+" m2");
 
-    //bài 05:
-    // let canhKeA = Number(prompt("Nhập cạnh kề A: "));
-    // let canhKeB = Number(prompt("Nhập cạnh kề B: "));
-    // let dienTichTamGiacVuong = (canhKeA*canhKeB)/2;
-    // alert("Tam giác vuông có cạnh kề A "+canhKeA+" m, có cạnh kề B "+canhKeB+" m, có diện tích là: "+dienTichTamGiacVuong+"m2");
+    //bài 05: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.
+    let canhKeA = Number(prompt("Nhập cạnh kề A: "));
+    let canhKeB = Number(prompt("Nhập cạnh kề B: "));
+    let dienTichTamGiacVuong = (canhKeA*canhKeB)/2;
+    alert("Tam giác vuông có cạnh kề A "+canhKeA+" m, có cạnh kề B "+canhKeB+" m, có diện tích là: "+dienTichTamGiacVuong+"m2");
 
-    //bài 06:
-    // let a = Number(prompt("Nhập ẩn a: "));
-    // let b =Number(prompt("Nhập ẩn b: "));
-    // if(a==0 &&b==0){
-    //     alert("Phương trình có vô só nghiệm.");
-    // }else  if(a==0 && b!=0){
-    //     alert("Phương trình vô nghiệm.");
-    // }else {
-    //     let x = -b/a;
-    //     alert("Phương trình bậc nhất "+a+"x + "+b+" = 0 có nghiệm là: "+x);
-    //}
+    //bài 06: Giải phương trình bậc 1.
+    let a = Number(prompt("Nhập ẩn a: "));
+    let b =Number(prompt("Nhập ẩn b: "));
+    if(a==0 &&b==0){
+        alert("Phương trình có vô só nghiệm.");
+    }else  if(a==0 && b!=0){
+        alert("Phương trình vô nghiệm.");
+    }else {
+        let x = -b/a;
+        alert("Phương trình bậc nhất "+a+"x + "+b+" = 0 có nghiệm là: "+x);
+    }
 
-    //bài 07:
-    // let a = Number(prompt("Nhập a: "));
-    // let b = Number(prompt("Nhập b: "));
-    // let c = Number(prompt("Nhập c: "));
-    // let x1,x2;
-    // var delta= (b*b)-(4*a*c);
-    // delta = Number(delta);
-    // if(delta<0){
-    //     alert("Phương trình vô nghiệm.");
-    // }else if(delta === 0){
-    //     if(a==0){
-    //         alert("Phương trình không có nghiệm.");
-    //     }else {
-    //         x1=x2=(-b)/(2*a);
-    //         alert("Phương trình "+a+"x2 + "+b+"x + "+c+" =0 có nghiệm kép là: x1 = x2 = "+x1);
-    //     }
-    // }else {
-    //     let canBac2=Math.sqrt(delta);
-    //     x1= (-b+canBac2)/(2*a);
-    //     x2= (-b-canBac2)/(2*a);
-    //     alert("Phương trình "+a+"x2 + "+b+"x + "+c+" =0 có 2 nghiệm  là: x1 = "+x1+ " x2 = "+x2);
-    // }
+    //bài 07: Giải phương trình bậc 2.
+    let a = Number(prompt("Nhập a: "));
+    let b = Number(prompt("Nhập b: "));
+    let c = Number(prompt("Nhập c: "));
+    let x1,x2;
+    var delta= (b*b)-(4*a*c);
+    delta = Number(delta);
+    if(delta<0){
+        alert("Phương trình vô nghiệm.");
+    }else if(delta === 0){
+        if(a==0){
+            alert("Phương trình không có nghiệm.");
+        }else {
+            x1=x2=(-b)/(2*a);
+            alert("Phương trình "+a+"x2 + "+b+"x + "+c+" =0 có nghiệm kép là: x1 = x2 = "+x1);
+        }
+    }else {
+        let canBac2=Math.sqrt(delta);
+        x1= (-b+canBac2)/(2*a);
+        x2= (-b-canBac2)/(2*a);
+        alert("Phương trình "+a+"x2 + "+b+"x + "+c+" =0 có 2 nghiệm  là: x1 = "+x1+ " x2 = "+x2);
+    }
 
-    //bài 08.
-    // let age = Number(prompt("Nhập tuổi: "));
-    // let number = Number.isInteger(age);
-    // if(number == true){
-    //     if(age>0&&age<100){
-    //         alert(age+" la tuổi của một người.");
-    //     }else {
-    //         alert(age+" không phải là tuổi của mọt người.");
-    //     }
-    // }else {
-    //     alert(age+" không phải là tuổi của mọt người.");
-    // }
+    //bài 08. Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.
+    let age = Number(prompt("Nhập tuổi: "));
+    let number = Number.isInteger(age);
+    if(number == true){
+        if(age>0&&age<100){
+            alert(age+" la tuổi của một người.");
+        }else {
+            alert(age+" không phải là tuổi của mọt người.");
+        }
+    }else {
+        alert(age+" không phải là tuổi của mọt người.");
+    }
 
-    //bài 09:
-    // let a =Number(prompt("Nhập số a: "));
-    // let b =Number(prompt("Nhập số b: "));
-    // let c =Number(prompt("Nhập số c: "));
-    // if(a >0 && b>0 && c>0){
-    //     if(a+b>c){
-    //         if(b+c>a){
-    //             if(a+c>b){
-    //                 alert(a+' '+b+' ' +c+" là cạnh của một tam giác");
-    //             }
-    //         }
-    //     }
-    // }else {
-    //     alert(a + b + c+" không phải là cạnh của một tam giác");
-    // }
+    //bài 09: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác. Điều kiện để a,b,c là cạnh của một tam giác là:
+    let a =Number(prompt("Nhập số a: "));
+    let b =Number(prompt("Nhập số b: "));
+    let c =Number(prompt("Nhập số c: "));
+    if(a >0 && b>0 && c>0){
+        if(a+b>c){
+            if(b+c>a){
+                if(a+c>b){
+                    alert(a+' '+b+' ' +c+" là cạnh của một tam giác");
+                }
+            }
+        }
+    }else {
+        alert(a + b + c+" không phải là cạnh của một tam giác");
+    }
 
-    //Bài 10
-    // let soDienCu = Number(prompt("Nhập số điện cũ: "));
-    // let soDienMoi= Number(prompt("Nhập số điện mới: "));
-    // let soDien=soDienMoi-soDienCu;
-    // let soTien;
-    // if(soDien<=100){
-    //     soTien=(soDien*1000);
-    // }else if(soDien<=150){
-    //     soTien=(soDien-100)*1200+100*1000;
-    // }else if(soDien<=200){
-    //     soTien=(soDien-150)*2000+50*1200+100*1000;
-    // }else {
-    //     soTien=(soDien-200)*2500+50*2000+50*1200+100*1000;
-    // }
-    // alert("Số điện tháng này là "+soDien+" kWh, số tiền phải nộp là: "+soTien);
+    //Bài 10: Viết chương trình tính giá điện.
+    let soDienCu = Number(prompt("Nhập số điện cũ: "));
+    let soDienMoi= Number(prompt("Nhập số điện mới: "));
+    let soDien=soDienMoi-soDienCu;
+    let soTien;
+    if(soDien<=100){
+        soTien=(soDien*1000);
+    }else if(soDien<=150){
+        soTien=(soDien-100)*1200+100*1000;
+    }else if(soDien<=200){
+        soTien=(soDien-150)*2000+50*1200+100*1000;
+    }else {
+        soTien=(soDien-200)*2500+50*2000+50*1200+100*1000;
+    }
+    alert("Số điện tháng này là "+soDien+" kWh, số tiền phải nộp là: "+soTien);
 
 
-    //Bài 11
+    //Bài 11: Viết chương trình tính thuế thu nhập cá nhân.
     let salary = Number(prompt("Nhập lương: "));
     let ttncn;
     if(salary<0){
@@ -143,6 +143,8 @@
         ttncn=(salary*35)/100;
         alert("Lương của bạn phải chịu 35% thuế TNCN là: "+ttncn+"VND");
     }
+
+    //Bai 11: 
 </script>
 </body>
 </html>
