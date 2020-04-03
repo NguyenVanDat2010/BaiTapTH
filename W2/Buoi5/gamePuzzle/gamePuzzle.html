@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Puzzle</title>
+    <style>
+        img{
+            width: 800px;
+            height: 160px;
+        }
+    </style>
+</head>
+<body>
+<table border="1" cellspacing="1">
+    <tr>
+        <img src="monkey_part1.jpg" onclick="changeImg(this)" id="img1"/>
+    </tr>
+    <tr>
+        <img src="panda_part2.jpg" onclick="changeImg(this)" id="img2"/>
+    </tr>
+    <tr>
+        <img src="cat_part3.jpg" onclick="changeImg(this)" id="img3"/>
+    </tr>
+    <tr>
+        <img src="monkey_part4.jpg" onclick="changeImg(this)" id="img4"/>
+    </tr>
+    <tr>
+        <img src="panda_part5.jpg" onclick="changeImg(this)" id="img5"/>
+    </tr>
+    <p id="finish"></p>
+</table>
+<script>
+    var test = Math.floor(Math.random()*5);
+    function changeImg(newImg) {
+        var x=newImg.id;
+        switch (x) {
+            case 'img1':
+            {
+                changeImg(x);
+                switch (test) {
+                    case 0:
+                        document.getElementById("img1").src="monkey_part1.jpg";
+                        break;
+                    case 1:
+                        document.getElementById("img1").src="panda_part1.jpg";
+                        break;
+                    case 2:
+                        document.getElementById("img1").src="cat_part1.jpg";
+                        break;
+                }
+                test=Math.floor(Math.random()*5);
+            }
+            break;
+            case 'img2':
+                changeImg(x);
+                switch (test) {
+                    case 0:
+                        document.getElementById("img2").src="monkey_part2.jpg";
+                        break;
+                    case 1:
+                        document.getElementById("img2").src="panda_part2.jpg";
+                        break;
+                    case 2:
+                        document.getElementById("img2").src="cat_part2.jpg";
+                        break;
+                }
+                test=Math.floor(Math.random()*4);
+                break;
+            case 'img3':
+                changeImg(x);
+                switch (test) {
+                    case 0:
+                        document.getElementById("img3").src="monkey_part3.jpg";
+                        break;
+                    case 1:
+                        document.getElementById("img3").src="panda_part3.jpg";
+                        break;
+                    case 2:
+                        document.getElementById("img3").src="cat_part3.jpg";
+                }
+                test=Math.floor(Math.random()*5);
+                break;
+            case 'img4':
+                changeImg(x);
+                switch (test) {
+                    case 0:
+                        document.getElementById("img4").src="monkey_part4.jpg";
+                        break;
+                    case 1:
+                        document.getElementById("img4").src="panda_part4.jpg";
+                        break;
+                    case 2:
+                        document.getElementById("img4").src="cat_part4.jpg";
+                        break;
+                }
+                test=Math.floor(Math.random()*5);
+                break;
+            case 'img5':
+                changeImg(x);
+                switch (test) {
+                    case 0:
+                        document.getElementById("img5").src="monkey_part5.jpg";
+                        break;
+                    case 1:
+                        document.getElementById("img5").src="panda_part5.jpg";
+                        break;
+                    case 2:
+                        document.getElementById("img5").src="cat_part5.jpg";
+                }
+                test=Math.floor(Math.random()*5);
+                break;
+        }
+        let p1 = document.getElementById('img1').src;
+        let p2 = document.getElementById('img2').src;
+        let p3 = document.getElementById('img3').src;
+        let p4 = document.getElementById('img4').src;
+        let p5 = document.getElementById('img5').src;
+        let pn1 = p1.substring(p1.lastIndexOf('/')+1);
+        let pn2 = p2.substring(p2.lastIndexOf('/')+1);
+        let pn3 = p3.substring(p3.lastIndexOf('/')+1);
+        let pn4 = p4.substring(p4.lastIndexOf('/')+1);
+        let pn5 = p5.substring(p5.lastIndexOf('/')+1);
+
+        let pna = pn1 +" "+ pn2 +" "+ pn3 +" "+ pn4 +" "+ pn5;
+        switch (pna) {
+            case "monkey_part1.jpg monkey_part2.jpg monkey_part3.jpg monkey_part4.jpg monkey_part5.jpg" :
+                document.getElementById("finish").innerHTML = "Complete!";
+                break;
+            case "panda_part1.jpg panda_part2.jpg panda_part3.jpg panda_part4.jpg panda_part5.jpg" :
+                document.getElementById("finish").innerHTML = "Congratulation!";
+                break;
+            case "cat_part1.jpg cat_part2.jpg cat_part3.jpg cat_part4.jpg cat_part5.jpg" :
+                document.getElementById("finish").innerHTML = "Good Job!";
+                break;
+            default:
+                document.getElementById("finish").innerHTML = "";
+        }
+    }
+
+</script>
+</body>
+</html>
