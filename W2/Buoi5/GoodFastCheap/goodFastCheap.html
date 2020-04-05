@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Good fast cheap</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td><input type="checkbox" id="good" onclick="checkGood();"></td>
+        <td><label>GOOD</label></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" id = "fast" onclick="checkFast();"></td>
+        <td><label>FAST</label></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" id="cheap" onclick="checkCheap();"></td>
+        <td>CHEAP</td>
+    </tr>
+</table>
+<script>
+    function checkGood() {
+        document.getElementById("fast").checked=false;
+    }
+    function checkFast() {
+        document.getElementById("cheap").checked=false;
+    }
+    function checkCheap() {
+        document.getElementById("good").checked=false;
+    }
+</script>
+</body>
+</html>
