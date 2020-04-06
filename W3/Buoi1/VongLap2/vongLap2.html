@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vong lặp 2</title>
+</head>
+<body>
+<script>
+
+    //Bài 01:
+    // let n=Number(prompt("Nhập n: "));
+    // let f0=0,f1=1;
+    // document.write(n+" số fibonacci đầu tiên là: "+f0+' '+f1)
+    // for (let i=0;i<(n-2);i++){
+    //     let f2 = f0+f1;
+    //     document.write(' '+f2);
+    //     f0=f1;f1=f2;
+    // }
+
+
+    //Bai 02:
+    let result = n = Number(prompt("Nhập n: "));
+    while(n<0){
+        n=Number(prompt("Nhập lại n: "));
+    }
+    if(n==0||n==1){
+        document.write(n+'! = 1' +' ')
+    }else {
+        n--;
+        result*=n;
+    }
+    document.write((n+1)+'! = '+result);
+
+</script>
+</body>
+</html>
