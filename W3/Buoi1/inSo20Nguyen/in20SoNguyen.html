@@ -8,26 +8,24 @@
 <script>
 
     //-----------------------------------------------------------------------------------------------------
-    //function inSoNguyenTo() {
-        let num = Number(prompt("Nhập số lượng số nguyên cần in ra: "));
-        let count = 0 , kiemtra = true , ketqua = '' , n = 2;
-        while (count < num) {
-            for (let i = 2; i <= (n / 2); i++) {
-                if (n % i == 0) {
-                    kiemtra = false;
-                    break;
-                }else{
-                    kiemtra=true;
-                }
+    let num = Number(prompt("Nhập số lượng số nguyên tố cần in ra: "));
+    let count = 0 , kiemtra = true , ketqua = '' , n = 2;
+    while (count < num) {
+        for (let i = 2 ; i <= (n / 2) ; i++) {
+            if (n % i == 0) {
+                kiemtra = false;
+                break;
+            } else {
+                kiemtra = true;
             }
-            if (kiemtra == true) {
-                ketqua = n;
-                count++;
-                document.write(ketqua+', ');
-            }
-            n++;
         }
-   // }
+        if (kiemtra == true) {
+            ketqua = n;
+            count++;
+            document.write(ketqua + ', ');
+        }
+        n++;
+    }
 
 
     //kiem tra so nguyen to
