@@ -6,89 +6,94 @@
 </head>
 <body>
 <script>
-    //bai 01
-    // for(let i=1;i<=100;i++){
-    //     document.write(i+"<br>");
-    //     if (i==99){
-    //         alert("Da hoan thanh");
-    //         break;
-    //     }
-    // }
-
-    //Bai 02:
-    // let doC=Number(prompt("Nhap nhiet do hien tai: "));
-    // while (doC>100){
-    //     doC=Number(prompt("Vui long giam nhiet do xuong: "));
-    //     while (doC<20){
-    //         doC=Number(prompt("Vui long tang nhiet do len: "));
-    //     }
-    // }
-
-    //Bai 03: f(n)= f(n-1) +f(n-2) với n >= 2
-    // let n=Number(prompt("Nhập n: "));
-    // let f0=0,f1=1;
-    // document.write(n+' số fibonacci đầu tiên là: ');
-    // document.write(f0+' '+f1);
-    // let f2;
-    // for (let i=0;i<(n-2);i++){
-    //     f2=f0+f1;
-    //     document.write(' '+f2);
-    //     f0=f1;
-    //     f1=f2
-    // }
 
 
-    //Bai 04:
-    // let n=2,f0=0,f1=1,f2;
-    // for (let i=0;i<n;i++){
-    //     f2=f0+f1;
-    //     if(f2 % 5 == 0){
-    //         document.write('Số fibonacci đầu tiên chia hết cho 5 là: '+f2);
-    //         break;
-    //     }else {
-    //         n++;
-    //     }
-    //     f0=f1;
-    //     f1=f2;
-    // }
-    //
+    //bai 01: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.
+    for(let i=1;i<=100;i++){
+        document.write(i+"<br>");
+        if (i==99){
+            alert("Da hoan thanh");
+            break;
+        }
+    }
 
-    //Bai 05:
-    // let n=Number(prompt("Nhap n: "));
-    // let f0=0,f1=1,sum;
-    // document.write(n+ " số fibonacci đầu tiên là: ");
-    // document.write(f0+' '+f1);
-    // sum = f0+f1;
-    // for (let i=0;i<(n-2);i++){
-    //     let f2=f0+f1;
-    //     document.write(' '+f2);
-    //     sum+=f2;
-    //     f0=f1;
-    //     f1=f2;
-    // }
-    // document.write('<br>'+'<br>'+"Tổng của "+n+" số fibonacci đầu tiên là: "+sum);
+    //Bai 02: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập.
+    // Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ. Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.
+    let doC=Number(prompt("Nhap nhiet do hien tai: "));
+    while (doC>100){
+        doC=Number(prompt("Vui long giam nhiet do xuong: "));
+        while (doC<20){
+            doC=Number(prompt("Vui long tang nhiet do len: "));
+        }
+    }
 
-
-    //Bài 06:
-    // let n = Number(prompt("Nhập n"));
-    // let count = 0 , sum = 0;
-    // document.write(n+' số tự nhiên đầu tiên chia hết cho 7 là: ');
-    // for (let i = 7; i >= 7; i++) {
-    //     if (i % 7 == 0) {
-    //         document.write(i + ' ');
-    //         sum += i;
-    //         count++;
-    //         if (count == n) {
-    //             break;
-    //         }
-    //     } else {
-    //         continue;
-    //     }
-    // }
-    // document.write('<br>' + "Tổng " + n + " số tự nhiên đầu tiên chia hết cho 7 là:  " + sum);
+    //Bai 03: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
+    // f(n)= f(n-1) +f(n-2) với n >= 2
+    let n=Number(prompt("Nhập n: "));
+    let f0=0,f1=1;
+    document.write(n+' số fibonacci đầu tiên là: ');
+    document.write(f0+' '+f1);
+    let f2;
+    for (let i=0;i<(n-2);i++){
+        f2=f0+f1;
+        document.write(' '+f2);
+        f0=f1;
+        f1=f2
+    }
 
 
-    //Bài 07:
+    //Bai 04:Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
+    let n=2,f0=0,f1=1,f2;
+    for (let i=0;i<n;i++){
+        f2=f0+f1;
+        if(f2 % 5 == 0){
+            document.write('Số fibonacci đầu tiên chia hết cho 5 là: '+f2);
+            break;
+        }else {
+            n++;
+        }
+        f0=f1;
+        f1=f2;
+    }
+
+
+    //Bai 05: Tính tổng của 20 số đầu tiên trong dãy fibonacci.
+    let n=Number(prompt("Nhap n: "));
+    let f0=0,f1=1,sum;
+    document.write(n+ " số fibonacci đầu tiên là: ");
+    document.write(f0+' '+f1);
+    sum = f0+f1;
+    for (let i=0;i<(n-2);i++){
+        let f2=f0+f1;
+        document.write(' '+f2);
+        sum+=f2;
+        f0=f1;
+        f1=f2;
+    }
+    document.write('<br>'+'<br>'+"Tổng của "+n+" số fibonacci đầu tiên là: "+sum);
+
+
+    //Bài 06: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
+    let n = Number(prompt("Nhập n: "));
+    let count = 0 , sum = 0;
+    document.write(n+' số tự nhiên đầu tiên chia hết cho 7 là: ');
+    for (let i = 7; i >= 7; i++) {
+        if (i % 7 == 0) {
+            document.write(i + ' ');
+            sum += i;
+            count++;
+            if (count == n) {
+                break;
+            }
+        } else {
+            continue;
+        }
+    }
+    document.write('<br>' + "Tổng " + n + " số tự nhiên đầu tiên chia hết cho 7 là:  " + sum);
+
+
+    //Bài 07: Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra "Fizz",
+    // 5 thì in ra "Buzz" thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".
     for (let i=1;i<=100;i++){
         if (i%3==0&&i%5==0){
             document.write(" FizzBuzz ");
