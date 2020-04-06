@@ -20,16 +20,17 @@
 
     //Bai 02:
     let result = n = Number(prompt("Nhập n: "));
-    while(n<0){
+    while(n<=0){
         n=Number(prompt("Nhập lại n: "));
     }
     if(n==0||n==1){
-        document.write(n+'! = 1' +' ')
-    }else {
+        document.write(n+'! = 1')
+    }
+    while(n>1){
         n--;
         result*=n;
     }
-    document.write((n+1)+'! = '+result);
+    document.write(n+'! = '+result);
 
 </script>
 </body>
