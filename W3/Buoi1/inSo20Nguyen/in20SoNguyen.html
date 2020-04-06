@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In ra 20 số nguyên đầu tiên</title>
+</head>
+<body>
+<script>
+
+    //-----------------------------------------------------------------------------------------------------
+    //function inSoNguyenTo() {
+        let num = Number(prompt("Nhập số lượng số nguyên cần in ra: "));
+        let count = 0 , kiemtra = true , ketqua = '' , n = 2;
+        while (count < num) {
+            for (let i = 2; i <= (n / 2); i++) {
+                if (n % i == 0) {
+                    kiemtra = false;
+                    break;
+                }else{
+                    kiemtra=true;
+                }
+            }
+            if (kiemtra == true) {
+                ketqua = n;
+                count++;
+                document.write(ketqua+', ');
+            }
+            n++;
+        }
+   // }
+
+
+    //kiem tra so nguyen to
+    /*let num = Number(prompt("Nhap N: "));
+    if(num<2){
+        alert(num+" ko la so nguyen to");
+    }
+     else {
+         for (let i=2;i<=(num/2);i++){
+             if (num%i==0){
+                 alert(num+" ko la so nguyen to");
+             }
+         }alert(num+" la so nguyen to");
+
+    }*/
+
+
+</script>
+</body>
+</html>
