@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thao tác với mảng</title>
+</head>
+<body>
+<div>
+    <h1>Sample Screen</h1>
+    <input id="txtvalue">
+    <input type="button" value="Add" onclick="addArray();">
+    <input type="button" value="Display" onclick="showArray();">
+    <span id="result"></span>
+</div>
+<script>
+    let x=0;
+    let array= Array();
+    function addArray() {
+        array[x]=document.getElementById("txtvalue").value;
+        alert("Element: "+array[x]+" added to index "+x);
+        x++;
+        document.getElementById("txtvalue").value=''; //gán gtri rỗng cho txtvalue
+    }
+
+    function showArray() {
+        let e="<hr/>";
+        for (let i=0;i<(array.length);i++){
+            e+= "Element: "+i+" = "+array[i]+"</br>";
+        }
+        document.getElementById('result').innerHTML=e;
+    }
+</script>
+</body>
+</html>
