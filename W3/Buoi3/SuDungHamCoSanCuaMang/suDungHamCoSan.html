@@ -8,25 +8,25 @@
 <script>
 
     //Bài 01: Nối chuỗi
-    // let myColor= ["Red","While","Green","Black","Blue"];
-    // console.log(myColor.join());
-    // console.log(myColor.join('+'));
-    // console.log(myColor.join(' '));
-    // console.log(myColor.toString());
+    let myColor= ["Red","While","Green","Black","Blue"];
+    console.log(myColor.join());
+    console.log(myColor.join('+'));
+    console.log(myColor.join(' '));
+    console.log(myColor.toString());
 
     //Bài 02:
-    // let numberA = Number(prompt("Enter any number: "));
-    // //chuyển sang dạng chuỗi
-    // let strA=numberA.toString();
-    // let arrayA= [strA[0]];
-    // for (let i=0;i<strA.length;i++){
-    //     if (strA[i-1]%2==0&&strA[i]%2==0){
-    //         arrayA.push("-",strA[i])
-    //     }else {
-    //         arrayA.push(strA[i])
-    //     }
-    // }
-    // document.write(arrayA.join(''));
+    let numberA = Number(prompt("Enter any number: "));
+    //chuyển sang dạng chuỗi
+    let strA=numberA.toString();
+    let arrayA= [strA[0]];
+    for (let i=0;i<strA.length;i++){
+        if (strA[i-1]%2==0&&strA[i]%2==0){
+            arrayA.push("-",strA[i])
+        }else {
+            arrayA.push(strA[i])
+        }
+    }
+    document.write(arrayA.join(''));
 
     //let arrayA=[];
     //arrayA.push(numberA);
