@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tra cứu từ điển tiếng anh</title>
+    <style>
+        div{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h2>Từ điển tra tiếng anh sang tiếng việt</h2>
+    <input id="txtValue">
+    <input type="button" value="Search" onclick="showContent();">
+    <span id="result"></span>
+</div>
+<script>
+
+    let arrayA=["tiger","person","handsome","girlfriend","honey","lunch","dinner","parent","mother","father"];
+    let arrayB=["con hổ","người","đẹp trai","bạn gái","mật ngọt(người yêu)","bữa trua","bữa tối","bố mẹ","mẹ(u, bu, má)","bố(cha, ba, u, thầy)"];
+    let result;
+    function showContent() {
+        let inputValue= document.getElementById("txtValue").value;
+        for (let i=0;i<arrayA.length;i++){
+            if (inputValue==arrayA[i]){
+                for (let j=0;j<arrayB.length;j++){
+                    if(i==j){
+                        result=document.getElementById("result").innerHTML='<br><br>'+'Dịch nghĩa: '+arrayB[j];
+                        break;
+                    }
+                }
+                break;
+            }else {
+                result=document.getElementById("result").innerHTML='<br><br>'+'Từ khóa của bạn không có trong từ điển'
+            }
+        }
+
+
+        // let a=arrayA.indexOf(inputValue);
+        // let kq='';
+        // if (a!==-1) {
+        //     kq= arrayB[a];
+        // }else {
+        //     kq="Từ khóa của bạn không có trong từ điển"
+        // }
+        // result=document.getElementById("result").innerHTML='<br><br>Dịch nghĩa: '+kq
+
+
+
+    }
+</script>
+</body>
+</html>
