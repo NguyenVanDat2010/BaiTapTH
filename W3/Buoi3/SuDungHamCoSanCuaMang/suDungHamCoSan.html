@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng hàm có sẵn của mảng</title>
+</head>
+<body>
+<script>
+
+    //Bài 01: Nối chuỗi
+    // let myColor= ["Red","While","Green","Black","Blue"];
+    // console.log(myColor.join());
+    // console.log(myColor.join('+'));
+    // console.log(myColor.join(' '));
+    // console.log(myColor.toString());
+
+    //Bài 02:
+    // let numberA = Number(prompt("Enter any number: "));
+    // //chuyển sang dạng chuỗi
+    // let strA=numberA.toString();
+    // let arrayA= [strA[0]];
+    // for (let i=0;i<strA.length;i++){
+    //     if (strA[i-1]%2==0&&strA[i]%2==0){
+    //         arrayA.push("-",strA[i])
+    //     }else {
+    //         arrayA.push(strA[i])
+    //     }
+    // }
+    // document.write(arrayA.join(''));
+
+    //let arrayA=[];
+    //arrayA.push(numberA);
+
+    //Bài 03:
+    let str = prompt("Nhap chuoi: ");
+    let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    let result = [];
+    for(var x=0; x<str.length; x++)
+    {
+        if(UPPER.indexOf(str[x]) !== -1)
+        {
+            result.push(str[x].toLowerCase());
+        }
+        else if(LOWER.indexOf(str[x]) !== -1)
+        {
+            result.push(str[x].toUpperCase());
+        }
+        else
+        {
+            result.push(str[x]);
+        }
+    }
+    document.write(result.join(''));
+
+    // let valueB=prompt("Nhập chuỗi: ");
+    // let arrayB = valueB.toUpperCase();
+    // document.write(arrayB);
+
+
+</script>
+</body>
+</html>
