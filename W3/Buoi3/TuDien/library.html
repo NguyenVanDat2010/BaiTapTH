@@ -23,21 +23,19 @@
     let result;
     function showContent() {
         let inputValue= document.getElementById("txtValue").value;
+        //Cách 01:
         for (let i=0;i<arrayA.length;i++){
-            if (inputValue==arrayA[i]){
-                for (let j=0;j<arrayB.length;j++){
-                    if(i==j){
-                        result=document.getElementById("result").innerHTML='<br><br>'+'Dịch nghĩa: '+arrayB[j];
-                        break;
-                    }
-                }
+            if (inputValue==arrayA[i]) {
+                result = arrayB[i];
+                result = document.getElementById("result").innerHTML = '<br><br>' + 'Dịch nghĩa: ' + arrayB[i];
                 break;
             }else {
-                result=document.getElementById("result").innerHTML='<br><br>'+'Từ khóa của bạn không có trong từ điển'
+                result=document.getElementById("result").innerHTML='<br><br>'+'Từ khóa của bạn không có trong từ điển';
             }
         }
 
 
+        //Cách 02
         // let a=arrayA.indexOf(inputValue);
         // let kq='';
         // if (a!==-1) {
@@ -48,7 +46,20 @@
         // result=document.getElementById("result").innerHTML='<br><br>Dịch nghĩa: '+kq
 
 
-
+        //Cách 03: Có vẻ sai (^-^)
+        // for (let i=0;i<arrayA.length;i++){
+        //     if (inputValue==arrayA[i]){
+        //         for (let j=0;j<arrayB.length;j++){
+        //             if(i==j){
+        //                 result=document.getElementById("result").innerHTML='<br><br>'+'Dịch nghĩa: '+arrayB[j];
+        //                 break;
+        //             }
+        //         }
+        //         break;
+        //     }else {
+        //       result=document.getElementById("result").innerHTML='<br><br>'+'Từ khóa của bạn không có trong từ điển'
+        //     }
+        // }
     }
 </script>
 </body>
