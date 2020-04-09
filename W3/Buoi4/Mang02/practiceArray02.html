@@ -6,19 +6,33 @@
 </head>
 <body>
 <script>
-    //Bài 01
-    let arrA=[[1, 2, 1, 24],
-        [8, 11, 9, 4],
-        [7, 0, 7, 27],
-        [7, 4, 28, 14],
-        [3, 10, 26, 7]
-    ];
-    for (let i in arrA){
-        document.write('row '+i+'<br>');
-        for (let j in arrA[i]){
-            document.write(arrA[i][j]+'<br>')
-        }
+    //Bài 01:
+    // let arrA=[[1, 2, 1, 24],
+    //     [8, 11, 9, 4],
+    //     [7, 0, 7, 27],
+    //     [7, 4, 28, 14],
+    //     [3, 10, 26, 7]
+    // ];
+    // for (let i in arrA){
+    //     document.write('row '+i+'<br>');
+    //     for (let j in arrA[i]){
+    //         document.write(arrA[i][j]+'<br>')
+    //     }
+    // }
+
+    //Bai 02:
+    let arrB= ['c', 's', 'c', '2', '6', '1']
+    let firstValue=0,lastValue=arrB.length-1;
+    while (firstValue<lastValue){
+        let a=arrB[firstValue];
+        arrB[firstValue]=arrB[lastValue];
+        arrB[lastValue]=a;
+        firstValue++;lastValue--;
     }
+    document.write(arrB.join(''));
+
+    //Bai 03:
+
 
 </script>
 </body>
