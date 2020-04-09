@@ -32,17 +32,35 @@
     // document.write(arrB.join(''));
 
     //Bai 03:
-    let arrC= ['c', 's', 'c', '2', '6', '1','-2','-6','2','9','d'];
-    let count=0;
-    for (let i=0;i<arrC.length;i++){
-        if (arrC[i]>='a'&& arrC[i]<='z'||arrC[i]>='A' && arrC[i]<='Z'){
-            continue;
-        }
-        count++
-    }
-    document.write("Số ký tự số là: "+count);
+    // let arrC= ['c', 's', 'c', '2', '6', '1','-2','-6','2','9','d'];
+    // let count=0;
+    // for (let i=0;i<arrC.length;i++){
+    //     if (arrC[i]>='a'&& arrC[i]<='z'||arrC[i]>='A' && arrC[i]<='Z'){
+    //         continue;
+    //     }
+    //     count++
+    // }
+    // document.write("Số ký tự số là: "+count);
 
     //Bai 04:
+    let strA='Viết một chương trình để đếm số từ trong một chuỗi';
+    let count =0,chechkString=true;
+    if (strA==null){
+        count=-1;
+    }
+    for (let i=0;i<strA.length;i++){
+        if(strA[i]!=' '){
+            if (chechkString){
+                count++;
+                chechkString=false;
+            }
+        }else {
+            chechkString=true;
+        }
+    }
+    document.write(count)
+
+    //
 
 </script>
 </body>
