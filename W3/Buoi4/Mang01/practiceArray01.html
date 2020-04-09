@@ -9,142 +9,152 @@
     <span id="result"></span>
 </form>
 <script>
-    //Bài 01:
-    // let arrayA=[1,20,3,4,51,6,73,8,90,20],arrayB=[],count=0;
-    // for (let i=0;i<arrayA.length;i++){
-    //     if (arrayA[i]>=10){
-    //         arrayB.push(arrayA[i]);
-    //         count++;
-    //     }
-    // }
-    // document.write("Mảng 10 phần tử  là: "+arrayA+"<br><br>"+"Có "+count+" số nguyên lớn hơn 10 là: "+arrayB)
+    //Bài 01: Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử.
+    // Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.
+    let arrayA=[1,20,3,4,51,6,73,8,90,20],arrayB=[],count=0;
+    for (let i=0;i<arrayA.length;i++){
+        if (arrayA[i]>=10){
+            arrayB.push(arrayA[i]);
+            count++;
+        }
+    }
+    document.write("Mảng 10 phần tử  là: "+arrayA+"<br><br>"+"Có "+count+" số nguyên lớn hơn 10 là: "+arrayB)
 
 
-    //Bài 02:
-    // let arrayB=[1,2,3,4,5,6,7,8,9,10];
-    // let max=arrayB[0],index=0;
-    // for (let i=1;i<arrayB.length;i++){
-    //     if (arrayB[i]>max){
-    //         max=arrayB[i];
-    //         index=i;
-    //     }
-    // }
+    //Bài 02: Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.
+    // Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.
+    let arrayB=[1,2,3,4,5,6,7,8,9,10];
+    let max=arrayB[0],index=0;
+    for (let i=1;i<arrayB.length;i++){
+        if (arrayB[i]>max){
+            max=arrayB[i];
+            index=i;
+        }
+    }
     // document.write('Giá trị lớn nhất là: '+max+' tại vị trí '+index);
 
 
-    // //Bài 03:
-    // let arrayC=[1,2,3,4,5,6,7,8,9];
-    // let average=arrayC[0];
-    // let max=arrayC[0],index=0;
-    // for (let i=1;i<arrayC.length;i++){
-    //     average+=arrayC[i];
-    //     if (arrayC[i]>max){
-    //         max=arrayC[i];
-    //         index=i;
-    //     }
-    // }
-    // average/=arrayC.length;
-    // document.write('Giá trị lớn nhất là: '+max+' tại vị trí '+index+'<br><br>'+'Giá trị trung bình của phần tử trong mảng: '+average);
+    // //Bài 03: Viết chương trình khởi tạo mảng số nguyên.
+    // Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng.
+    let arrayC=[1,2,3,4,5,6,7,8,9];
+    let average=arrayC[0];
+    let max=arrayC[0],index=0;
+    for (let i=1;i<arrayC.length;i++){
+        average+=arrayC[i];
+        if (arrayC[i]>max){
+            max=arrayC[i];
+            index=i;
+        }
+    }
+    average/=arrayC.length;
+    document.write('Giá trị lớn nhất là: '+max+' tại vị trí '+index+'<br><br>'+'Giá trị trung bình của phần tử trong mảng: '+average);
 
 
-    //Bài 04:
-    // let n =Number(prompt("Nhập số lượng phần tử của mảng: "));
-    // let arrayD=[];
-    // let i=0;
-    // while (i<n){
-    //     arrayD[i]=Number(prompt('Nhập mảng số nguyên: '));
-    //     i++;
-    // }
-    // document.write("Mảng nhập vào có "+n+' phần tử là: '+arrayD+'<br><br>');
-    // let  indexFirst=0,indexLast=arrayD.length-1;
-    // while (indexFirst<indexLast){
-    //     let valueFirst = arrayD[indexFirst];
-    //     arrayD[indexFirst]=arrayD[indexLast];
-    //     arrayD[indexLast]=valueFirst;
-    //     indexFirst++;indexLast--;
-    // }
-    // document.write('Mảng sau khi đảo ngược là: '+arrayD)
+    //Bài 04: Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.
+    let n =Number(prompt("Nhập số lượng phần tử của mảng: "));
+    let arrayD=[];
+    let i=0;
+    while (i<n){
+        arrayD[i]=Number(prompt('Nhập mảng số nguyên: '));
+        i++;
+    }
+    document.write("Mảng nhập vào có "+n+' phần tử là: '+arrayD+'<br><br>');
+    let  indexFirst=0,indexLast=arrayD.length-1;
+    while (indexFirst<indexLast){
+        let valueFirst = arrayD[indexFirst];
+        arrayD[indexFirst]=arrayD[indexLast];
+        arrayD[indexLast]=valueFirst;
+        indexFirst++;indexLast--;
+    }
+    document.write('Mảng sau khi đảo ngược là: '+arrayD)
 
 
-    //Bai 05:
-    // let arrayE=[1,2,3,4,5,6,7,8,9,-1,-2,-3,5,-6,-7,8,-9];
-    // let count=0,arrayE1=[];
-    // for (let i=0;i<arrayE.length;i++){
-    //     if(arrayE[i]<0){
-    //         arrayE1.push(arrayE[i]);
-    //         count++;
-    //     }
-    // }
-    // document.write('Mảng '+arrayE+'<br><br>'+'Có '+count+' phần tử bé hơn 0 là: '+arrayE1)
+    //Bai 05:Viết chương trình đếm số nguyên âm trong một chuỗi
+    let arrayE=[1,2,3,4,5,6,7,8,9,-1,-2,-3,5,-6,-7,8,-9];
+    let count=0,arrayE1=[];
+    for (let i=0;i<arrayE.length;i++){
+        if(arrayE[i]<0){
+            arrayE1.push(arrayE[i]);
+            count++;
+        }
+    }
+    document.write('Mảng '+arrayE+'<br><br>'+'Có '+count+' phần tử bé hơn 0 là: '+arrayE1)
 
 
-    //Bài 06:
-    // let n =Number(prompt("Nhập số lượng phần tử của mảng: "));
-    // let arrayF=[],index=-1;
-    // let i=0;
-    // while (i<n){
-    //     arrayF[i]=Number(prompt('Nhập mảng số nguyên: '));
-    //     i++;
-    // }
-    // let integerV=Number(prompt("Nhập số nguyên V: "));
-    // for (let i=0;i<arrayF.length;i++){
-    //     if (integerV==arrayF[i]){
-    //         index=i;
-    //         break;
-    //     }
-    // }
-    // if (index==-1){
-    //     document.write(integerV+" không thuộc mảng đã cho");
-    // }else {
-    //     document.write(integerV+" đã có trong mảng");
-    // }
+    //Bài 06: Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử,
+    // nhập/tạo phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng số nguyên không?
+    // Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".
+    let n =Number(prompt("Nhập số lượng phần tử của mảng: "));
+    let arrayF=[],index=-1;
+    let i=0;
+    while (i<n){
+        arrayF[i]=Number(prompt('Nhập mảng số nguyên: '));
+        i++;
+    }
+    let integerV=Number(prompt("Nhập số nguyên V: "));
+    for (let i=0;i<arrayF.length;i++){
+        if (integerV==arrayF[i]){
+            index=i;
+            break;
+        }
+    }
+    if (index==-1){
+        document.write(integerV+" không thuộc mảng đã cho");
+    }else {
+        document.write(integerV+" đã có trong mảng");
+    }
 
-    //Bài 07:
-    // let n =Number(prompt("Nhập số lượng phần tử của mảng: "));
-    // let arrayG=[],index=-1;
-    // let i=0;
-    // while (i<n){
-    //     arrayG[i]=Number(prompt('Nhập mảng số nguyên: '));
-    //     i++;
-    // }
-    // let integerV=Number(prompt("Nhập số nguyên V: "));
-    // for (let i=0;i<arrayG.length;i++){
-    //     if (integerV==arrayG[i]){
-    //         index=i;
-    //         break;
-    //     }
-    // }
-    // if (index==-1){
-    //     document.write(integerV+" không thuộc mảng đã cho");
-    // }else {
-    //     arrayG.splice(index,1);
-    //     arrayG.push('0');
-    // }
-    // document.write(arrayG)
-
-
-    //Bài 08:
-    // let n =Number(prompt("Nhập số lượng phần tử của mảng: "));
-    // let arrayH=[];
-    // let i=0;
-    // while (i<n){
-    //     arrayH[i]=Number(prompt('Nhập mảng số nguyên: '));
-    //     i++;
-    // }
-    // let  min;
-    // for (let i = 0; i < arrayH.length-1; i++) {
-    //     for (let j = i + 1; j < arrayH.length; j++) {
-    //         if (arrayH[i] < arrayH[j]) {
-    //             min = arrayH[i];
-    //             arrayH[i] = arrayH[j];
-    //             arrayH[j] = min;
-    //         }
-    //     }
-    // }
-    // document.write(arrayH);
+    //Bài 07: Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V.
+    // Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng
+    // (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)
+    let n =Number(prompt("Nhập số lượng phần tử của mảng: "));
+    let arrayG=[],index=-1;
+    let i=0;
+    while (i<n){
+        arrayG[i]=Number(prompt('Nhập mảng số nguyên: '));
+        i++;
+    }
+    let integerV=Number(prompt("Nhập số nguyên V: "));
+    for (let i=0;i<arrayG.length;i++){
+        if (integerV==arrayG[i]){
+            index=i;
+            break;
+        }
+    }
+    if (index==-1){
+        document.write(integerV+" không thuộc mảng đã cho");
+    }else {
+        arrayG.splice(index,1);
+        arrayG.push('0');
+    }
+    document.write(arrayG)
 
 
-    //Bai 09:
+    //Bài 08: Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử.
+    // Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.
+    let n =Number(prompt("Nhập số lượng phần tử của mảng: "));
+    let arrayH=[];
+    let i=0;
+    while (i<n){
+        arrayH[i]=Number(prompt('Nhập mảng số nguyên: '));
+        i++;
+    }
+    let  min;
+    for (let i = 0; i < arrayH.length-1; i++) {
+        for (let j = i + 1; j < arrayH.length; j++) {
+            if (arrayH[i] < arrayH[j]) {
+                min = arrayH[i];
+                arrayH[i] = arrayH[j];
+                arrayH[j] = min;
+            }
+        }
+    }
+    document.write(arrayH);
+
+
+    //Bai 09:Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi là mảng a và b.
+    // Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên. Chương trình sẽ lưu các phần tử được
+    // nối từ hai mảng b và a vào mảng c. Hiển thị mảng c.
     let arrayI=[],arrayJ=[],arrayK=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
     let n =Number(prompt("Nhập số lượng phần tử của mảng: "));
     let i=0;
