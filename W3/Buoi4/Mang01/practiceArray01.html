@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 01</title>
+</head>
+<body>
+<form>
+    <span id="result"></span>
+</form>
+<script>
+    //Bài 01:
+    let n =Number(prompt("Nhập số lượng mảng: "));
+    let arrayA=[],arrayB=[];
+    let i=0, count=0;
+    while (i<n){
+        arrayA[i]=Number(prompt('Nhập mảng: '));
+        i++;
+    }
+    for (let i=0;i<arrayA.length;i++){
+        if (arrayA[i]>=10){
+            arrayB.push(arrayA[i]);
+            count++;
+        }
+    }
+    document.write("Mảng "+n+" phần tử nhập vào là: "+arrayA+"<br><br>"+"Có "+count+" số nguyên lớn hơn 10 là: "+arrayB)
+
+
+    //Bài 02:
+    let n =Number(prompt("Nhập số lượng mảng: "));
+    let arrayA=[];
+    let i=0, max, result;
+    while (i<n){
+        arrayA[i]=Number(prompt('Nhập mảng: '));
+        i++;
+    }
+
+</script>
+</body>
+</html>
