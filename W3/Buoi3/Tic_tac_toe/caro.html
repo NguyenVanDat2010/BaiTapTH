@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo bàn cờ caro</title>
+    <style>
+        .input{
+            background-color: dodgerblue;
+            height: 35px;
+            border-radius: 9px;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <h2>Caro game</h2>
+    <input type="button" value="Show caro" onclick="showArray();"><br><br>
+    <span id="caro"></span>
+    <input type="button" class="input" value="Change value" onclick="changeValue();">
+</div>
+<script>
+    let result = document.getElementById("caro");
+    let arrayA=[];
+    let flag=true;
+
+    for (let i=0;i<10;i++){
+        arrayA[i]=['<b>'+'.','.','.','.','.','.','.','.','.','.'+'</b>']
+    }
+
+    function showArray(){
+        let data='';
+        for (let i=0;i<arrayA.length;i++){
+            data+="<br>";
+            for (let j=0;j<arrayA[i].length;j++){
+                data+=arrayA[i][j]+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        data+="<br><br>";
+        result.innerHTML=data;
+    }
+
+    function changeValue() {
+        let data='';
+        let vitriX=prompt("Nhập vị trí x: ");
+        let vitriY=prompt("Nhập vị trí y: ");
+        if(flag==true) {
+            arrayA[vitriX][vitriY] = 'X';
+        }else {arrayA[vitriX][vitriY]='O';}
+        showArray();
+
+
+        // for (let i=0;i<10;i++){
+        //     data+="<br>";
+        //     for (let j=0;j<10;j++){
+        //         data+=arrayA[i][j]+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+        //     }
+        // }
+        // data+="<br><br>";
+        // result.innerHTML=data;
+        flag=!flag;
+    }
+
+
+
+</script>
+</body>
+</html>
