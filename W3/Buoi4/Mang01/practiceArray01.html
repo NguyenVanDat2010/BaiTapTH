@@ -49,12 +49,21 @@
 
     //Bài 04:
     let n =Number(prompt("Nhập số lượng mảng: "));
-    let arrayB=[];
+    let arrayD=[];
     let i=0;
     while (i<n){
-        arrayA[i]=Number(prompt('Nhập mảng số nguyên: '));
+        arrayD[i]=Number(prompt('Nhập mảng số nguyên: '));
         i++;
     }
+    document.write("Mảng nhập vào có "+n+' phần tử là: '+arrayD+'<br><br>');
+    let  indexFirst=0,indexLast=arrayD.length-1;
+    while (indexFirst<indexLast){
+        let valueFirst = arrayD[indexFirst];
+        arrayD[indexFirst]=arrayD[indexLast];
+        arrayD[indexLast]=valueFirst;
+        indexFirst++;indexLast--;
+    }
+    document.write('Mảng sau khi đảo ngược là: '+arrayD)
 
 </script>
 </body>
