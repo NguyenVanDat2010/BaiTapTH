@@ -124,28 +124,42 @@
 
 
     //Bài 08:
-    let n =Number(prompt("Nhập số lượng phần tử của mảng: "));
-    let arrayH=[],arrayI=[];
-    let i=0;
-    while (i<n){
-        arrayH[i]=Number(prompt('Nhập mảng số nguyên: '));
-        i++;
-    }
-    let  min;
-    for (let i = 0; i < arrayH.length-1; i++) {
-        for (let j = i + 1; j < arrayH.length; j++) {
-            if (arrayH[i] < arrayH[j]) {
-                min = arrayH[i];
-                arrayH[i] = arrayH[j];
-                arrayH[j] = min;
-            }
-        }
-    }
-    document.write(arrayH)
+    // let n =Number(prompt("Nhập số lượng phần tử của mảng: "));
+    // let arrayH=[];
+    // let i=0;
+    // while (i<n){
+    //     arrayH[i]=Number(prompt('Nhập mảng số nguyên: '));
+    //     i++;
+    // }
+    // let  min;
+    // for (let i = 0; i < arrayH.length-1; i++) {
+    //     for (let j = i + 1; j < arrayH.length; j++) {
+    //         if (arrayH[i] < arrayH[j]) {
+    //             min = arrayH[i];
+    //             arrayH[i] = arrayH[j];
+    //             arrayH[j] = min;
+    //         }
+    //     }
+    // }
+    // document.write(arrayH);
 
 
     //Bai 09:
-
+    let arrayI=[],arrayJ=[],arrayK=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+    let n =Number(prompt("Nhập số lượng phần tử của mảng: "));
+    let i=0;
+    while (i<n){
+        arrayI[i]=Number(prompt('Nhập mảng số nguyên 1 gồm '+n+' phần tử'));
+        i++;
+    }
+    i=0;
+    while (i<n){
+        arrayJ[i]=Number(prompt('Nhập mảng số nguyên 2 gồm '+n+' phần tử'));
+        i++;
+    }
+    document.write('Mảng 1: '+arrayI+'<br><br>'+'Mảng 2: '+arrayJ+'<br><br>'+'Mảng 3: '+arrayK+'<br><br>')
+    let c= arrayK.concat(arrayI,arrayJ)
+    document.write('Mảng sau khi nối là: '+c)
 
 </script>
 </body>
