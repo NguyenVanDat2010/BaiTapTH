@@ -21,18 +21,28 @@
     // }
 
     //Bai 02:
-    let arrB= ['c', 's', 'c', '2', '6', '1']
-    let firstValue=0,lastValue=arrB.length-1;
-    while (firstValue<lastValue){
-        let a=arrB[firstValue];
-        arrB[firstValue]=arrB[lastValue];
-        arrB[lastValue]=a;
-        firstValue++;lastValue--;
-    }
-    document.write(arrB.join(''));
+    // let arrB= ['c', 's', 'c', '2', '6', '1']
+    // let firstValue=0,lastValue=arrB.length-1;
+    // while (firstValue<lastValue){
+    //     let a=arrB[firstValue];
+    //     arrB[firstValue]=arrB[lastValue];
+    //     arrB[lastValue]=a;
+    //     firstValue++;lastValue--;
+    // }
+    // document.write(arrB.join(''));
 
     //Bai 03:
+    let arrC= ['c', 's', 'c', '2', '6', '1','-2','-6','2','9','d'];
+    let count=0;
+    for (let i=0;i<arrC.length;i++){
+        if (arrC[i]>='a'&& arrC[i]<='z'||arrC[i]>='A' && arrC[i]<='Z'){
+            continue;
+        }
+        count++
+    }
+    document.write("Số ký tự số là: "+count);
 
+    //Bai 04:
 
 </script>
 </body>
