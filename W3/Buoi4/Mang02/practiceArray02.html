@@ -43,24 +43,45 @@
     // document.write("Số ký tự số là: "+count);
 
     //Bai 04:
-    let strA='Viết một chương trình để đếm số từ trong một chuỗi';
-    let count =0,chechkString=true;
-    if (strA==null){
-        count=-1;
-    }
-    for (let i=0;i<strA.length;i++){
-        if(strA[i]!=' '){
-            if (chechkString){
-                count++;
-                chechkString=false;
+    // let strA='Viết một chương trình để đếm số từ trong một chuỗi';
+    // let count =0,chechkString=true;
+    // if (strA==null){
+    //     count=-1;
+    // }
+    // for (let i=0;i<strA.length;i++){
+    //     if(strA[i]!=' '){
+    //         if (chechkString){
+    //             count++;
+    //             chechkString=false;
+    //         }
+    //     }else {
+    //         chechkString=true;
+    //     }
+    // }
+    // document.write(count)
+
+    //Bài 05:
+    let a=prompt("Nhập vào chuỗi 1: ");
+    let b=prompt("Nhập vào chuỗi 2: ");
+    let check=true;
+    if (a.length==b.length){
+        for (let i=0;i<a.length;i++){
+            if (a[i]!=b[i]){
+                check=false;
+                break;
             }
-        }else {
-            chechkString=true;
         }
     }
-    document.write(count)
+    else check=false;
+    if (check==true){
+        document.write("Hai chuỗi nhập vào giống nhau");
+    }else {
+        document.write("Hai chuỗi nhập vào không giống nhau");
+    }
 
-    //
+
+    //Bai 06:
+
 
 </script>
 </body>
