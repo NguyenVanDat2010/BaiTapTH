@@ -7,66 +7,66 @@
 <body>
 <script>
     //Bài 01:
-    // let arrA=[[1, 2, 1, 24],
-    //     [8, 11, 9, 4],
-    //     [7, 0, 7, 27],
-    //     [7, 4, 28, 14],
-    //     [3, 10, 26, 7]
-    // ];
-    // for (let i in arrA){
-    //     document.write('row '+i+'<br>');
-    //     for (let j in arrA[i]){
-    //         document.write(arrA[i][j]+'<br>')
-    //     }
-    // }
+    let arrA=[[1, 2, 1, 24],
+        [8, 11, 9, 4],
+        [7, 0, 7, 27],
+        [7, 4, 28, 14],
+        [3, 10, 26, 7]
+    ];
+    for (let i in arrA){
+        document.write('row '+i+'<br>');
+        for (let j in arrA[i]){
+            document.write(arrA[i][j]+'<br>')
+        }
+    }
 
     //Bai 02:
-    // let arrB= ['c', 's', 'c', '2', '6', '1']
-    // let firstValue=0,lastValue=arrB.length-1;
-    // while (firstValue<lastValue){
-    //     let a=arrB[firstValue];
-    //     arrB[firstValue]=arrB[lastValue];
-    //     arrB[lastValue]=a;
-    //     firstValue++;lastValue--;
-    // }
-    // document.write(arrB.join(''));
+    let arrB= ['c', 's', 'c', '2', '6', '1']
+    let firstValue=0,lastValue=arrB.length-1;
+    while (firstValue<lastValue){
+        let a=arrB[firstValue];
+        arrB[firstValue]=arrB[lastValue];
+        arrB[lastValue]=a;
+        firstValue++;lastValue--;
+    }
+    document.write(arrB.join(''));
 
-    //Bai 03:
-    // let arrC= ['c', 's', 'c', '2', '6', '1','-2','-6','2','9','d'];
-    // let count=0;
-    // for (let i=0;i<arrC.length;i++){
-    //     if (arrC[i]>='a'&& arrC[i]<='z'||arrC[i]>='A' && arrC[i]<='Z'){
-    //         continue;
-    //     }
-    //     count++
-    // }
-    // document.write("Số ký tự số là: "+count);
+   // Bai 03:
+    let arrC= ['c', 's', 'c', '2', '6', '1','-2','-6','2','9','d'];
+    let count=0;
+    for (let i=0;i<arrC.length;i++){
+        if (arrC[i]>='a'&& arrC[i]<='z'||arrC[i]>='A' && arrC[i]<='Z'){
+            continue;
+        }
+        count++
+    }
+    document.write("Số ký tự số là: "+count);
 
     //Bai 04:
-    // let strA='Viết một chương trình để đếm số từ trong một chuỗi';
-    // let count =0,chechkString=true;
-    // if (strA==null){
-    //     count=-1;
-    // }
-    // for (let i=0;i<strA.length;i++){
-    //     if(strA[i]!=' '){
-    //         if (chechkString){
-    //             count++;
-    //             chechkString=false;
-    //         }
-    //     }else {
-    //         chechkString=true;
-    //     }
-    // }
-    // document.write(count)
+    let strA='Viết một chương trình để đếm số từ trong một chuỗi';
+    let count =0,chechkString=true;
+    if (strA==null){
+        count=-1;
+    }
+    for (let i=0;i<strA.length;i++){
+        if(strA[i]!=' '){
+            if (chechkString){
+                count++;
+                chechkString=false;
+            }
+        }else {
+            chechkString=true;
+        }
+    }
+    document.write(count)
 
     //Bài 05:
-    let a=prompt("Nhập vào chuỗi 1: ");
-    let b=prompt("Nhập vào chuỗi 2: ");
+    let strB=prompt("Nhập vào chuỗi 1: ");
+    let strC=prompt("Nhập vào chuỗi 2: ");
     let check=true;
-    if (a.length==b.length){
-        for (let i=0;i<a.length;i++){
-            if (a[i]!=b[i]){
+    if (strB.length==strC.length){
+        for (let i=0;i<strB.length;i++){
+            if (strB[i]!=strC[i]){
                 check=false;
                 break;
             }
@@ -81,7 +81,14 @@
 
 
     //Bai 06:
-
+    // let arrD= prompt("Nhập vào mảng kí tự: ");
+    // let aa='_';
+    // for (let i=0;i<arrD.length;i++){
+    //     if (arrD[i]=='-'){
+    //         arrD[i]=aa;
+    //     }
+    // }
+    // document.write(arrD)
 
 </script>
 </body>
