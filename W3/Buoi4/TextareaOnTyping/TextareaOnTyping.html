@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faking Textarea on Typing</title>
+    <style>
+    </style>
+</head>
+<body>
+<center>
+    <form name="frmtextarea">
+        <h3>Type anything you want</h3>
+        <textarea name="txttextarea" cols="40" rows="10" onkeydown="typeTextarea();"></textarea>
+    </form>
+</center>
+<script>
+    let data='';
+    let arrayA=['T','ô','i',' ','l','à',' ','m','ộ','t',' ','đ','ứ','a',' ','n','g','ố','c','!','!'];
+    function typeTextarea() {
+        let valueTextarea=document.frmtextarea.txttextarea.value;
+        let lengthTextarea = valueTextarea.length;
+        if (lengthTextarea>0) {
+            for (let i = 0; i < lengthTextarea; i++) {
+                data+=arrayA[i];
+                if (lengthTextarea==arrayA.length){
+                    valueTextarea='';
+                    data='';
+                }
+            }
+        }
+        document.frmtextarea.txttextarea.value=data;
+        data='';
+        setTimeout('typeTextarea()',1);
+        
+        //setTimeout dùng để thiết lập một khoảng thời gian nào đó sẽ thực hiện một nhiệm vụ nào đó và nó chỉ thực hiện đúng một lần
+}
+</script>
+</body>
+</html>
