@@ -26,21 +26,59 @@
 //Bài 04:
 // function checkNumber(num) {
 //     let check=false;
-//     if (num>='0'&&num<='9'){
+//     if (num>='0'&&num<='9'||num<'0'){
 //         check=true;
 //     }
 //     document.write(check)
 // }
 
 //Bài 05:
-function minNumber(a,b,c) {
-    let min;
-    if (a<b&&a<c){
-        min=a;
-    }else if (b<c){
-        min=b;
-    }else {
-        min=c;
+// function minNumber(a,b,c) {
+//     let min;
+//     if (a<b&&a<c){
+//         min=a;
+//     }else if (b<c){
+//         min=b;
+//     }else {
+//         min=c;
+//     }
+//     document.write('Số nhỏ nhất: '+min);
+// }
+
+//Bài 06:
+// function checkInteger(num) {
+//     if (num==null||num<=0){
+//         return false;
+//     }
+//     let intNum=Number.isInteger(num);
+//     if (!intNum){
+//         return false;
+//     }
+//     return true;
+// }
+
+//Bài 07:
+// function changeNumber(a,b) {
+//     let x=a;
+//     a=b;
+//     b=x;
+//     document.write('a: '+a+', b: '+b)
+// }
+
+//Bài 08:
+function arrInt(arr) {
+    let firstIndex=0;lastIndex=arr.length-1;
+    while (firstIndex<lastIndex) {
+            let num = arr[firstIndex];
+            arr[firstIndex] = arr[lastIndex];
+            arr[lastIndex] = num;
+            firstIndex++;
+            lastIndex--;
     }
-    document.write('Số nhỏ nhất: '+min);
+    document.write(arr);
+}
+
+//Bai 09:
+function f() {
+
 }
