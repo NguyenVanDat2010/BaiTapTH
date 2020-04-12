@@ -59,7 +59,7 @@
         checkWin();
         showArray();
     }
-    
+
 //Check thắng-----------------------------------------------------------------------------------------------------------
     function checkWin() {
         for (let i = 0 ; i < 10 ; i++) {
@@ -72,8 +72,10 @@
                 }
                 if (arrayA[i][j] === "X" && arrayA[i][j + 1] === "X" && arrayA[i][j + 2] === "X" ||
                     arrayA[i][j] === "X" && arrayA[i + 1][j] === "X" && arrayA[i + 2][j] === "X" ||
-                    arrayA[i][j] === "X" && arrayA[i + 1][j + 1] === "X" && arrayA[i + 2][j + 2] === "X" ||
-                    arrayA[i][j] === "X" && arrayA[i - 1][j + 1] === "X" && arrayA[i - 2][j + 2] === "X") {
+                    arrayA[i][j] === "X" && arrayA[i + 1][j + 1] === "X" && arrayA[i + 2][j + 2] === "X" || //trên xuống
+ //hoặc là dưới lên    arrayA[i][j] === "X" && arrayA[i - 1][j - 1] === "X" && arrayA[i - 2][j - 2] === "X"
+                    arrayA[i][j] === "X" && arrayA[i - 1][j + 1] === "X" && arrayA[i - 2][j + 2] === "X") {  //dưới lên
+ //hoặc là trên xuống  arrayA[i][j] === "X" && arrayA[i + 1][j - 1] === "X" && arrayA[i + 2][j - 2] === "X"
                     alert("X Win");
                 }
             }
