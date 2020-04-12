@@ -6,14 +6,13 @@ function addProducts() {
     let n =document.getElementById("addproduct").value;
     if (n==''){
         alert("Bạn chưa nhập tên sản phẩm");
-        //arrA[i].focus();
+        document.getElementById("addproduct").focus();
+        return;
     }
     for (let i=0;i<arrA.length;i++) {
         if (n == arrA[i]) {
             check=false;
             break;
-        }else {
-            check=true;
         }
     }
     if (check==true) {
