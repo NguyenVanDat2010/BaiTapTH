@@ -3,20 +3,20 @@
 let arrA=[];
 let k=0,check=true,count=0;
 function addProducts() {
-    let n =document.getElementById("addproduct").value;
-    if (n==''){
+    let inputNameOfProduct =document.getElementById("addproduct").value;
+    if (inputNameOfProduct==''){
         alert("Bạn chưa nhập tên sản phẩm");
         document.getElementById("addproduct").focus();
         return;
     }
     for (let i=0;i<arrA.length;i++) {
-        if (n == arrA[i]) {
+        if (inputNameOfProduct == arrA[i]) {
             check=false;
             break;
         }
     }
     if (check==true) {
-        arrA[k] = n;
+        arrA[k] = inputNameOfProduct;
         alert("Thêm sản phẩm " + arrA[k] + " thành công");
         k++;count++;
         document.getElementById("addproduct").value = '';
@@ -44,6 +44,7 @@ function addProducts() {
         document.getElementById("countproducts").innerHTML =count;
     }else {
         alert("Tên sản phẩm đã tồn tại");
+        document.getElementById("addproduct").focus();
     }
 }
 function editProducts() {
