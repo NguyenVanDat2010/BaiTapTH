@@ -13,9 +13,17 @@
             background-color: #dddddd;
         }
         td, th {
-            border: 1px solid #dddddd;
+            border: 1px solid gray;
             text-align: left;
             padding: 8px;
+        }
+        .text{
+            width: 200px;
+            height: 30px;
+        }
+        .botton{
+            width: 100px;
+            height: 36px;
         }
     </style>
     <script src="ung_dung_quan_ly_sp.js"></script>
@@ -23,15 +31,16 @@
 <body>
 <form>
     <div>
-        <label>
+        <p>
             <h3>Thêm Mới Sản Phẩm</h3>
-            <input id="addproduct" placeholder="Nhập tên sản phẩm"> <input type="button" value="Thêm mới" onclick="addProducts();">
-        </label>
-        <span>
+            <input class="text" id="addproduct" placeholder="Nhập tên sản phẩm">
+            <input type="button" class="botton" value="Thêm mới" onclick="addProducts();">
+        </p>
+        <p>
             <h3>Hiển Thị Tất Cả Sản Phẩm</h3>
-            <h5><span id="countproducts"></span> Sản phẩm</h5>
+            <h5> Số lượng: <span id="countproducts"></span> SP</h5>
             <span id="result"></span>
-        </label>
+        </p>
     </div>
 </form>
 </body>
