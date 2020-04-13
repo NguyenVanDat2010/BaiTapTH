@@ -2,6 +2,7 @@
 //'Sony Xperia','Samsung galaxy s10','Xiaomi note 8','Iphone 11 pro max','Nokia 8','Huawei nova 3i','Oppo f1s'
 let arrListProducts=['Sony Xperia','Samsung galaxy s10','Xiaomi note 8'];
 let count=arrListProducts.length;
+window.onload = function() {showProducts()};
 
 //Tạo sp----------------------------------------------------------------------------------------------------------------
 function createProducts(newProducts) {
