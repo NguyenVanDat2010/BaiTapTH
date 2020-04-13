@@ -2,7 +2,6 @@
 //'Sony Xperia','Samsung galaxy s10','Xiaomi note 8','Iphone 11 pro max','Nokia 8','Huawei nova 3i','Oppo f1s'
 let arrListProducts=['Sony Xperia','Samsung galaxy s10','Xiaomi note 8'];
 let count=arrListProducts.length;
-showProducts(arrListProducts);
 
 //Tạo sp----------------------------------------------------------------------------------------------------------------
 function createProducts(newProducts) {
@@ -54,21 +53,21 @@ function deleteProducts(index) {
 
 //Hien thi sp-----------------------------------------------------------------------------------------------------------
 function showProducts() {
-    let data = '<table border="1" cellspacing="0">';
+    let data = '<table>';
     data += '<tr bgcolor="#adff2f" align="center">'+
-    '<td width="35px">' + "STT" + '</td>'+
-     '<td width="250px">' + "Tên sản phẩm" + '</td>'+
-     '<td width="100px">' + "Sửa" + '</td>'+
-     '<td width="100px">' + "Xóa" + '</td>'+
-     '</tr>';
+        '<th>' + "STT" + '</th>'+
+        '<th>' + "Tên sản phẩm" + '</th>'+
+        '<th>' + "Sửa" + '</th>'+
+        '<th>' + "Xóa" + '</th>'+
+        '</tr>';
 
     for (let j = 0 ; j < arrListProducts.length ; j++) {
         data += '<tr>'+
-         '<td>' + (j + 1) + '</td>'+
-         '<td>' + arrListProducts[j] + '</td>'+
-         '<td>' + "<input type='button' value='Sửa SP' onclick='editProducts("+j+");'>" + '</td>'+
-         '<td>' + "<input type='button' value='Xóa SP' onclick='deleteProducts("+j+");'>" + '</td>'+
-         '</tr>';
+            '<td>' + (j + 1) + '</td>'+
+            '<td>' + arrListProducts[j] + '</td>'+
+            '<td>' + "<input type='button' value='Sửa SP' onclick='editProducts("+j+");'>" + '</td>'+
+            '<td>' + "<input type='button' value='Xóa SP' onclick='deleteProducts("+j+");'>" + '</td>'+
+            '</tr>';
     }
     data += '</table>';
     document.getElementById("result").innerHTML = data;
