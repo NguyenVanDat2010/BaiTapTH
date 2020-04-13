@@ -1,19 +1,20 @@
 
 //'Sony Xperia','Samsung galaxy s10','Xiaomi note 8','Iphone 11 pro max','Nokia 8','Huawei nova 3i','Oppo f1s'
-let arrA=[];
-let k=0,check=true,count=0;
+let arrListProducts=['Sony Xperia','Samsung galaxy s10','Xiaomi note 8'];
+let count=arrListProducts.length;
+showProducts(arrListProducts);
 
 //Tạo sp----------------------------------------------------------------------------------------------------------------
 function createProducts(newProducts) {
     if (newProducts == '') {
         return  false;
     } else {
-        for (let i = 0 ; i < arrA.length ; i++) {
-            if (newProducts == arrA[i]) {
+        for (let i = 0 ; i < arrListProducts.length ; i++) {
+            if (newProducts == arrListProducts[i]) {
                 return false;
             }
         }
-        arrA.push(newProducts);
+        arrListProducts.push(newProducts);
         return true;
     }
 }
@@ -22,7 +23,7 @@ function createProducts(newProducts) {
 function addProducts() {
     let inputNameOfProduct = document.getElementById("addproduct").value;
     if (createProducts(inputNameOfProduct)){
-        alert("Thêm sản phẩm " + arrA[count] + " thành công");
+        alert("Thêm sản phẩm "+'"' + arrListProducts[count] +'"'+ " thành công");
         count++;
         document.getElementById("addproduct").value = '';
     }else {
@@ -33,43 +34,44 @@ function addProducts() {
 }
 
 //Sửa sp----------------------------------------------------------------------------------------------------------------
-function editProducts() {
-
+function editProducts(index) {
+    let editName=prompt("Nhập tên sản phẩm bạn muốn sửa ", arrListProducts[index]);
+    if (editName) {
+        arrListProducts[index] = editName;
+    }
+    showProducts();
 }
 
 //Xóa sp----------------------------------------------------------------------------------------------------------------
 function deleteProducts(index) {
-    for (let i=0;i<arrA.length;i++) {
-        if (index == i) {
-            arrA.splice(i , 1);
-            break;
-        }
+    let optionDelete=confirm("Bạn có chắc chắn muốn xóa không? ");
+    if (optionDelete) {
+        arrListProducts.splice(index , 1);
     }
-    //count=arrA.length;
+    count--;
     showProducts();
 }
 
 //Hien thi sp-----------------------------------------------------------------------------------------------------------
 function showProducts() {
-    let table = '<table border="1" cellspacing="0">';
-    table += '<tr bgcolor="#adff2f" align="center">';
-    table += '<td width="35px">' + "STT" + '</td>';
-    table += '<td width="250px">' + "Tên sản phẩm" + '</td>';
-    table += '<td width="100px">' + "Sửa" + '</td>';
-    table += '<td width="100px">' + "Xóa" + '</td>';
-    table += '</tr>';
-    for (let j = 0 ; j < arrA.length ; j++) {
-        table += '<tr>';
-        table += '<td>' + (j + 1) + '</td>';
-        table += '<td>' + arrA[j] + '</td>';
-        table += '<td>' + "<input type='button' value='Sửa' onclick='editProducts();'>" + '</td>';
-        table += '<td>' + "<input type='button' value='Xóa' onclick='deleteProducts(j);'>" + '</td>';
-        table += '</tr>';
+    let data = '<table border="1" cellspacing="0">';
+    data += '<tr bgcolor="#adff2f" align="center">'+
+    '<td width="35px">' + "STT" + '</td>'+
+     '<td width="250px">' + "Tên sản phẩm" + '</td>'+
+     '<td width="100px">' + "Sửa" + '</td>'+
+     '<td width="100px">' + "Xóa" + '</td>'+
+     '</tr>';
+
+    for (let j = 0 ; j < arrListProducts.length ; j++) {
+        data += '<tr>'+
+         '<td>' + (j + 1) + '</td>'+
+         '<td>' + arrListProducts[j] + '</td>'+
+         '<td>' + "<input type='button' value='Sửa SP' onclick='editProducts("+j+");'>" + '</td>'+
+         '<td>' + "<input type='button' value='Xóa SP' onclick='deleteProducts("+j+");'>" + '</td>'+
+         '</tr>';
     }
-    table += '</table>';
-    document.getElementById("result").innerHTML = table;
+    data += '</table>';
+    document.getElementById("result").innerHTML = data;
     document.getElementById("countproducts").innerHTML =count;
 }
-
-
 
