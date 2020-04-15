@@ -19,7 +19,7 @@
 </head>
 <body>
 <form name="frmMobile">
-    <fieldset name="fielMobile" id="checkOnOff" >
+    <fieldset name="fielMobile" disabled id="checkOnOff" >
         <legend id="resultOnOff">Moblie</legend>
         <input class="text" id="draftMobile">
         <div>
@@ -38,7 +38,7 @@
 
     </fieldset>
 
-    <input type="button" value="On/Off" onclick="">
+    <input type="button" value="On/Off" onclick="OnOffMobile()">
     <script src="lop_mo_ta_dien_thoai.js"></script>
     <script>
         let Nokia=new Mobile(true,10,'',[],[],'01283');
@@ -49,6 +49,14 @@
             phoneSent.draftMess(mess);
             phoneSent.sendMess(phoneRecives);
             document.getElementById(idText).value='';
+        }
+        function OnOffMobile() {
+            let a=document.getElementById("checkOnOff").disabled;
+            if (a==false){
+                document.getElementById("checkOnOff").disabled=true
+            }else {
+                document.getElementById("checkOnOff").disabled=false
+            }
         }
     </script>
 </form>
