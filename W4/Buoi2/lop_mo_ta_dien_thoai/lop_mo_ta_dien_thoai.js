@@ -10,6 +10,8 @@ let Mobile=function (mode,battery,draftMessage,sentMassage,inbox,phoneNumber) {
     this.changeMode=function () {
         if (this.battery>0&&!this.mode){
             this.mode=true;
+        }else {
+            this.mode=false;
         }
     };
     //Có chức năng xạc pin điện thoại.
@@ -21,6 +23,8 @@ let Mobile=function (mode,battery,draftMessage,sentMassage,inbox,phoneNumber) {
         if (this.mode){
             this.draftMessage=newMess;
             this.battery--;
+        }else {
+            this.chargeBattery();//dang chua hoat dong
         }
     };
     //Có chức năng gửi tin nhắn tới một chiếc điện thoại khác.
@@ -34,18 +38,26 @@ let Mobile=function (mode,battery,draftMessage,sentMassage,inbox,phoneNumber) {
             this.draftMessage='';
             this.battery--;
             phone.battery--;
+        }else {
+            this.chargeBattery();
         }
     };
     //Có chức năng xem tin trong hộp thư đến.
     this.showInbox=function () {
         if (this.mode){
+            this.battery--;
             return this.inbox;
+        }else {
+            this.chargeBattery();
         }
     };
     //Có chức năng xem tin đã gửi.
     this.showSentMess=function () {
         if (this.mode){
+            this.battery--;
             return this.sentMassage;
+        }else {
+            this.chargeBattery();
         }
     };
 };

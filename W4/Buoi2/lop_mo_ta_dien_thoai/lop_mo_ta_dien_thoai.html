@@ -20,7 +20,8 @@
 <body>
 <form name="frmMobile">
     <fieldset name="fielMobile" disabled id="checkOnOff" >
-        <legend id="resultOnOff">Moblie</legend>
+        <legend >Moblie</legend>
+        -----------------------------------Pin: <span id="battery"></span>%
         <input class="text" id="draftMobile">
         <div>
             <h4>-------------------Nokia------------------</h4>
@@ -38,7 +39,7 @@
 
     </fieldset>
 
-    <input type="button" value="On/Off" onclick="OnOffMobile()">
+    <input style="color: red" type="button" value="On/Off" onclick="OnOffMobile()">
     <script src="lop_mo_ta_dien_thoai.js"></script>
     <script>
         let Nokia=new Mobile(true,10,'',[],[],'01283');
@@ -49,6 +50,7 @@
             phoneSent.draftMess(mess);
             phoneSent.sendMess(phoneRecives);
             document.getElementById(idText).value='';
+            document.getElementById("battery").innerHTML=Nokia.battery;
         }
         function OnOffMobile() {
             let a=document.getElementById("checkOnOff").disabled;
@@ -58,6 +60,7 @@
                 document.getElementById("checkOnOff").disabled=false
             }
         }
+        document.getElementById("battery").innerHTML=Nokia.battery;
     </script>
 </form>
 </body>
