@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lớp mô tả điện thoại</title>
+
+    <style>
+        fieldset{
+            width: 300px;
+            height: 500px;
+            text-align: center;
+        }
+        .text{
+            width: 140px;
+            height: 170px;
+            text-align: start;
+        }
+    </style>
+</head>
+<body>
+<form >
+    <fieldset id="checkOnOff" >
+        <legend id="resultOnOff">Moblie</legend>
+        <input class="text" id="draftNokia">
+        <input class="text" id="draftIphone">
+
+        -------Nokia-----------------Iphone-------
+        <br>
+        <div>
+            <h4>Nokia</h4>
+            <input type="button" onclick="sentMessa('draftNokia',Nokia,Iphone)" value="Gửi tin nhắn">
+            <input type="button" onclick="alert(Nokia.showInbox());" value="Hộp thư đến">
+            <input type="button" onclick="alert(Nokia.showSentMess());" value="Tin nhắn đã gửi"><br><br>
+        </div>
+
+        <div>
+            <h4>Iphone</h4>
+            <input type="button" onclick="sentMessa('draftIphone',Iphone,Nokia)" value="Gửi tin nhắn">
+            <input type="button" onclick="alert(Iphone.showInbox());" value="Hộp thư đến">
+            <input type="button" onclick="alert(Iphone.showSentMess());" value="Tin nhắn đã gửi"><br><br>
+        </div>
+
+    </fieldset>
+
+    <input type="button" value="On/Off" onclick="">
+    <script src="lop_mo_ta_dien_thoai.js"></script>
+    <script>
+        let Nokia=new Mobile(true,10,'',[],[],'0123');
+        let Iphone=new Mobile(true,10,'',[],[],'0123');
+
+        function sentMessa(idText,phoneSent,phoneRecives) {
+            let mess=document.getElementById(idText).value;
+            phoneSent.draftMess(mess);
+            phoneSent.sendMess(phoneRecives);
+        }
+    </script>
+</form>
+</body>
+</html>
