@@ -10,33 +10,33 @@
             height: 500px;
             text-align: center;
         }
+        .text1{
+            width: 290px;
+            height: 25px;
+        }
         .text{
-            width: 140px;
+            width: 290px;
             height: 170px;
             text-align: start;
         }
     </style>
 </head>
 <body>
-<form >
-    <fieldset id="checkOnOff" >
+<form name="frmMobile">
+    <fieldset name="fielMobile" id="checkOnOff" >
         <legend id="resultOnOff">Moblie</legend>
-        <input class="text" id="draftNokia">
-        <input class="text" id="draftIphone">
-
-        -------Nokia-----------------Iphone-------
-        <br>
+        <input class="text" id="draftMobile">
         <div>
-            <h4>Nokia</h4>
-            <input type="button" onclick="sentMessa('draftNokia',Nokia,Iphone)" value="Gửi tin nhắn">
-            <input type="button" onclick="alert(Nokia.showInbox());" value="Hộp thư đến">
+            <h4>-------------------Nokia------------------</h4>
+            <input type="button" onclick="sentMess('draftMobile',Nokia,Iphone)" value="Gửi tin nhắn">
+            <input type="button" onclick="alert(Iphone.showInbox());" value="Hộp thư đến">
             <input type="button" onclick="alert(Nokia.showSentMess());" value="Tin nhắn đã gửi"><br><br>
         </div>
 
         <div>
-            <h4>Iphone</h4>
-            <input type="button" onclick="sentMessa('draftIphone',Iphone,Nokia)" value="Gửi tin nhắn">
-            <input type="button" onclick="alert(Iphone.showInbox());" value="Hộp thư đến">
+            <h4>-------------------Iphone------------------</h4>
+            <input type="button" onclick="sentMess('draftMobile',Iphone,Nokia)" value="Gửi tin nhắn">
+            <input type="button" onclick="alert(Nokia.showInbox());" value="Hộp thư đến">
             <input type="button" onclick="alert(Iphone.showSentMess());" value="Tin nhắn đã gửi"><br><br>
         </div>
 
@@ -45,13 +45,14 @@
     <input type="button" value="On/Off" onclick="">
     <script src="lop_mo_ta_dien_thoai.js"></script>
     <script>
-        let Nokia=new Mobile(true,10,'',[],[],'0123');
-        let Iphone=new Mobile(true,10,'',[],[],'0123');
+        let Nokia=new Mobile(true,10,'',[],[],'01283');
+        let Iphone=new Mobile(true,10,'',[],[],'06538');
 
-        function sentMessa(idText,phoneSent,phoneRecives) {
+        function sentMess(idText,phoneSent,phoneRecives) {
             let mess=document.getElementById(idText).value;
             phoneSent.draftMess(mess);
             phoneSent.sendMess(phoneRecives);
+            document.getElementById(idText).value='';
         }
     </script>
 </form>
