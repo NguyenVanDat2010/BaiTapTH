@@ -27,7 +27,7 @@ let myGameArea = {
         //khởi tạo số khung hình =0
         this.frameNo=0;
         //setInterval () sẽ tiếp tục gọi hàm cho đến khi gọi ClearInterval () hoặc cửa sổ được đóng lại
-        this.interval =setInterval(updateGameArea,15);
+        this.interval =setInterval(updateGameArea,20);
     },
     //clearRect () xóa các pixel được chỉ định trong một hình chữ nhật đã cho.
     clear: function () {
