@@ -136,9 +136,16 @@ function getRandomColor() {
 function updateGameArea() {
     let x, height, gap, minHeight, maxHeight, minGap, maxGap,score=-2;
     let color=getRandomColor();
+
+    //Xét thua nếu rơi chạm đất...........
+    let rockBottom = myGameArea.canvas.height-myGameBird.height;
+    if (myGameBird.yPosition>rockBottom){
+        myGameBird.yPosition=rockBottom;
+    }
+
     //gọi tới sự cố, nếu va chạm set dừng game
     for (let i = 0 ; i < myObstacle.length ; i++) {
-        if (myGameBird.crashWith(myObstacle[i])) {
+        if (myGameBird.crashWith(myObstacle[i])||myGameBird.yPosition==rockBottom) {
             mySoundOver.play();
             mySoundBird.stop();
             myGameArea.stop();
