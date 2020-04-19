@@ -8,8 +8,8 @@ let mySoundBird;
 
 function startGame() {
     myGameBird=new Component(130,120,'./images/bird1.png',30,30,'image');
-    mySoundOver=new soundGame('./sounds/soundOver.mp3');
-    mySoundBird=new soundGame('./sounds/flappingBird.mp3');
+    mySoundOver=new SoundGame('./sounds/soundOver.mp3');
+    mySoundBird=new SoundGame('./sounds/flappingBird.mp3');
     myScore=new Component(280,40,'white','30px','Consolas','text');
     myBackground=new Component(0,0,'./images/backgound.jpg',480,270,'image');
     myGameArea.start();
@@ -121,21 +121,28 @@ function Component (xPosition,yPosition,color,width,height,type) {
         return crash;
     }
 }
+//Lấy random color------------------------------------------------------------------------------------------------------
+function getRandomHex() {
+    return Math.floor(Math.random()*255);
+}
+function getRandomColor() {
+    let red=getRandomHex();
+    let green=getRandomHex();
+    let blue=getRandomHex();
+    return "rgb("+red+","+green+","+blue+")";
+}
 
 //cập nhật khung hinh 50 lần mỗi giây-----------------------------------------------------------------------------------
 function updateGameArea() {
     let x, height, gap, minHeight, maxHeight, minGap, maxGap,score=-2;
+    let color=getRandomColor();
     //gọi tới sự cố, nếu va chạm set dừng game
     for (let i = 0 ; i < myObstacle.length ; i++) {
         if (myGameBird.crashWith(myObstacle[i])) {
             mySoundOver.play();
-            myGameArea.stop();
             mySoundBird.stop();
+            myGameArea.stop();
             alert("Game Over");
-            //max score--------------------
-            // if (score<myGameArea.frameNo){
-            //     score=myGameArea.frameNo;
-            // }
             return;
         }
         score+=1/2;
@@ -149,8 +156,8 @@ function updateGameArea() {
     myBackground.update();
     myGameArea.frameNo+=1;
     
-    //kiểm tra cứ sau 180 khung hình sẽ vẽ random  1 chướng ngại vật
-    if (myGameArea.frameNo==1||everyInterval(180)){
+    //kiểm tra cứ sau 180 khung hình sẽ vẽ random 1 chướng ngại vật
+    if (myGameArea.frameNo==1||everyInterval(150)){
         x=myGameArea.canvas.width;
         minHeight=20;
         maxHeight=200;
@@ -161,9 +168,9 @@ function updateGameArea() {
         //lấy khoảng trống ngẫu nhiên từ 50 đến 150
         gap=Math.floor(Math.random()*(maxGap-minGap)+minGap);
         //lấy x=480, y=độ cao + khoảng trống (vẽ từ trên xuống theo tọa độ)
-        myObstacle.push(new Component(x, 0, "orange", 10, height));
+        myObstacle.push(new Component(x, 0, color, 15, height));
         //lấy x=480, y=0(vẽ từ trên xuống theo tọa độ)
-        myObstacle.push(new Component(x,height+gap,'orange',10,x-height-gap));
+        myObstacle.push(new Component(x,height+gap,color,15,x-height-gap));
     }
     for (let j=0;j<myObstacle.length;j++){
         myObstacle[j].xPosition-=1;
@@ -177,7 +184,7 @@ function updateGameArea() {
 }
 
 //Âm thanh--------------------------------------------------------------------------------------------------------------
-function soundGame(src) {
+function SoundGame(src) {
     this.sound=document.createElement('audio');
     this.sound.src=src;
     this.sound.setAttribute('preload','auto');
