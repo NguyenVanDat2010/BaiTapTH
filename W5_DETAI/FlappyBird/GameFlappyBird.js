@@ -164,7 +164,7 @@ function updateGameArea() {
     myGameArea.frameNo+=1;
     
     //kiểm tra cứ sau 180 khung hình sẽ vẽ random 1 chướng ngại vật
-    if (myGameArea.frameNo==1||everyInterval(150)){
+    if (myGameArea.frameNo==1||everyInterval(170)){
         x=myGameArea.canvas.width;
         minHeight=20;
         maxHeight=200;
