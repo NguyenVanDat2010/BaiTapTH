@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        text{
+            color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+<script>
+    if (typeof(Storage) !== "undefined") {
+        var domain = localStorage.getItem('Score');
+        document.write(domain); // kết quả freetuts.net
+    } else {
+        document.write('Trình duyệt của bạn không hỗ trợ local storage');
+    }
+</script>
+</body>
+</html>

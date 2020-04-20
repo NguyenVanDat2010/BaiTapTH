@@ -8,11 +8,11 @@ let myGameOver;
 // window.onload = function() {startGame()};
 
 function startGame() {
-    myGameBird=new Component(130,120,'./images/bird1.png',30,30,'image');
+    myGameBird=new Component(200,120,'./images/bird1.png',30,30,'image');
     mySoundOver=new SoundGame('./sounds/soundOver.mp3');
     mySoundBird=new SoundGame('./sounds/flappingBird.mp3');
-    myScore=new Component(400,40,'white','30px','Consolas','text');
-    myGameOver=new Component(180,165,'red','50px','Consolas','text');
+    myScore=new Component(420,40,'aquamarine','30px','Eras Demi ITC','text');
+    myGameOver=new Component(135,165,'red','50px','Arial Black','text');
     myBackground=new Component(0,0,'./images/backgound1.jpg',600,350,'image');
     myGameArea.start();
 }
@@ -29,7 +29,7 @@ let myGameArea = {
         //khởi tạo số khung hình =0
         this.frameNo=0;
         //setInterval () sẽ tiếp tục gọi hàm cho đến khi gọi ClearInterval () hoặc cửa sổ được đóng lại
-        this.interval =setInterval(updateGameArea,20);
+        this.interval =setInterval(updateGameArea,13);
 
         //phương thức kiểm tra nếu một phím được nhấn
         window.addEventListener('keydown', function (e) {
@@ -64,7 +64,7 @@ function Component (xPosition,yPosition,color,width,height,type) {
     this.type=type;
     this.color = color;
     ctx = myGameArea.context;
-    if (this.type=='image'){
+    if (this.type=='image'||this.type=='line'){
         this.image=new Image();
         this.image.src=this.color;
     }
@@ -83,8 +83,11 @@ function Component (xPosition,yPosition,color,width,height,type) {
     //vẽ và cập nhật bird img
     this.update = function(){
         ctx = myGameArea.context;
-        if (this.type=='image'){
+        if (this.type=='image'||this.type=='line'){
             ctx.drawImage(this.image , this.xPosition , this.yPosition , this.width , this.height);
+            if (this.type='line'){
+
+            }
         }else
         if (this.type=='text'){
             ctx.font=this.width+' '+this.height;
@@ -146,7 +149,7 @@ function getRandomColor() {
 
 //cập nhật khung hinh 50 lần mỗi giây-----------------------------------------------------------------------------------
 function updateGameArea() {
-    let x, height, gap, minHeight, maxHeight, minGap, maxGap,score=-3,maxScore=0;
+    let x, height, gap, minHeight, maxHeight, minGap, maxGap,score=-3;
     let color=getRandomColor();
 
     //Xét thua nếu rơi chạm đất...........
@@ -154,6 +157,7 @@ function updateGameArea() {
     if (myGameBird.yPosition>rockBottom){
         myGameBird.yPosition=rockBottom;
     }
+
     //gọi tới sự cố, nếu va chạm set dừng game
     for (let i = 0 ; i < myObstacle.length ; i++) {
         if (myGameBird.crashWith(myObstacle[i])||myGameBird.yPosition==rockBottom) {
@@ -171,7 +175,6 @@ function updateGameArea() {
         score=0;
     }
 
-
     myGameArea.clear();
     //Hình nền.....................
     myBackground.newPos();
@@ -185,14 +188,14 @@ function updateGameArea() {
         maxHeight=200;
         //lấy ngẫu nhiên từ 20 đến 180
         height=Math.floor(Math.random()*(maxHeight-minHeight)+minHeight);
-        minGap=60;
+        minGap=50;
         maxGap=200;
         //lấy khoảng trống ngẫu nhiên từ 50 đến 150
         gap=Math.floor(Math.random()*(maxGap-minGap)+minGap);
         //lấy x=480, y=độ cao + khoảng trống (vẽ từ trên xuống theo tọa độ)
-        myObstacle.push(new Component(x, 0, color, 15, height));
+        myObstacle.push(new Component(x, 0, color, 25, height));
         //lấy x=480, y=0(vẽ từ trên xuống theo tọa độ)
-        myObstacle.push(new Component(x,height+gap,color,15,x-height-gap));
+        myObstacle.push(new Component(x,height+gap,color,25,x-height-gap));
     }
     for (let j=0;j<myObstacle.length;j++){
         myObstacle[j].xPosition-=1;
@@ -203,17 +206,6 @@ function updateGameArea() {
         case 32 :
             flyBird1();
             break;
-    }
-
-    //Lưu max score
-    if (typeof(Storage) !== "undefined") {
-        if (maxScore<score){
-            maxScore=score;
-        }
-        localStorage.setItem("Score", maxScore);
-        document.getElementById("score").innerHTML = localStorage.getItem("Score");
-    } else {
-        document.getElementById("score").innerHTML = "Sorry, your browser does not support Web Storage...";
     }
 
     myScore.text="SCORE: "+score;
@@ -250,4 +242,3 @@ function flyBird2() {
     mySoundBird.stop();
 }
 
-//note score txt
