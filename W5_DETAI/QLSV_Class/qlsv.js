@@ -149,3 +149,16 @@ function saveStudent(index) {
     }
     loadFullScreen(students);
 }
+
+//Reset lại ô nhập------------------------------------------------------------------------------------------------------
+function resetStudent() {
+    //Bật tắt nút BUTTON
+    document.getElementById("btnEdit").disabled=true;
+    document.getElementById("btnAdd").disabled=false;
+
+    //Gán giá trị rỗng cho thẻ INPUT
+    document.getElementById("studentName").value='';
+    document.getElementById("studentEmail").value='';
+    document.getElementById("studentPhone").value='';
+    document.getElementById("studentAddress").value='';
+}
