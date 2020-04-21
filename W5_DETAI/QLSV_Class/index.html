@@ -8,27 +8,26 @@
 </head>
 <body>
 <form name ="students"><div class="form-student">
-    <h3>Thông tin sinh viên</h3>
-    <label>Họ và tên :</label>
+    <h3>NHẬP THÔNG TIN SINH VIÊN</h3>
+    <label>Họ và tên:<span style="color: red"> *</span></label>
     <input type="text" id="studentName" name="name" />
     <br>
-    <label>Email:</label>
+    <label>Email:<span style="color: red"> *</span></label>
     <input type="text" id="studentEmail" name="email"/>
     <br>
-    <label>Phone:</label>
+    <label>Phone:<span style="color: red"> *</span></label>
     <input type="text" id="studentPhone" name="phone" />
     <br>
-    <label>Address:</label>
+    <label>Address:<span style="color: red"> *</span></label>
     <input type="text" id="studentAddress" name="address" />
     <br>
     <div style="width: 500px; text-align: center">
         <button style="width: 120px; height: 30px" id="btnAdd" type="button" value="Add" onclick="addStudent()">Cập Nhật</button>
         <button style="width: 120px; height: 30px" id="btnEdit" type="button" value="Save" onclick="saveStudent()" disabled>Lưu Lại</button>
         <button style="width: 120px; height: 30px" id="btnReset" type="button" value="Reset" onclick="resetStudent()">Reset</button>
-
     </div>
-
 </div>
+    <h3>CHI TIẾT THÔNG TIN SINH VIÊN</h3>
     <span id="main-body"></span>
 </form>
 </body>
