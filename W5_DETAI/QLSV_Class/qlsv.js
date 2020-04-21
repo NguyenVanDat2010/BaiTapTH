@@ -45,14 +45,13 @@ function addStudent() {
     let studentEmail = document.getElementById("studentEmail").value;
     let studentPhone = document.getElementById("studentPhone").value;
     let studentAddress = document.getElementById("studentAddress").value;
-    //(!createPhone) xét điều kiện nếu trường số điện thoại nhập vào không phải là số thì trả về false
     let createPhone=Number(studentPhone);
-    //xét điều kiện nếu trường tên nhập vào ít hơn 2 ký tự hoặc địa chỉ dưới 5 ký tự hoặc sô điện thoại dưới 9 số thì trả về false
-    if (studentName<2||studentAddress<5||studentPhone<9||!createPhone){
-        return false;
-    }else
+    //(!createPhone) xét điều kiện nếu trường số điện thoại nhập vào không phải là số thì trả về false
+    //xét điều kiện nếu trường tên nhập vào ít hơn 2 ký tự hoặc địa chỉ dưới 5 ký tự thì trả về false
     //ko được nhập giá trị rỗng
-    if (studentName == ""||studentEmail ==""||studentPhone == ""||studentAddress ==""){
+    if (studentName == ""||studentEmail ==""||
+        studentPhone == ""||studentAddress ==""||
+        studentName<2||studentAddress<5||!createPhone){
         alert("Bạn chưa nhập hoặc đã nhập sai thông tin.");
     }else {
         alert("Cập nhật sinh viên thành công.");
