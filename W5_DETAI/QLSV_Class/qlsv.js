@@ -1,4 +1,6 @@
+//load thông tin sinh viên trước
 window.onload=function () {loadFullScreen();};
+//tạo lớp student
 let student = function (studentName, studentEmail, studentPhone, studentAddress) {
     this.sutdentName = studentName;
     this.studentEmail = studentEmail;
@@ -98,9 +100,11 @@ function loadFullScreen() {
 //Sửa thông tin sinh viên-----------------------------------------------------------------------------------------------
 function editStudent(index) {
     k = index;
+    //Bật tắt nút BUTTON
     document.getElementById('btnAdd').disabled=true;
     document.getElementById('btnEdit').disabled=false;
 
+    //lấy giá trị từ mảng sinh viên tại vị trí index đưa lên trường nhập input text
     document.students.name.value=students[index].getStudentName();
     document.students.email.value =students[index].getStudentEmail();
     document.students.phone.value = students[index].getStudentPhone();
@@ -129,6 +133,7 @@ function deleteStudent(index) {
 //Lưu thông tin sinh viên-----------------------------------------------------------------------------------------------
 function saveStudent(index) {
     index = k ;
+    //khai báo các biến và gán giá trị nhập vào trường input text cho các biến đó
     let studentName =document.getElementById("studentName").value;
     let studentEmail =document.getElementById("studentEmail").value;
     let studentPhone =document.getElementById("studentPhone").value;
