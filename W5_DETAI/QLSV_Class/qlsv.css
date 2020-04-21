@@ -1,0 +1,53 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 1000px;
+}
+tr:nth-child(odd) {
+    background-color: yellowgreen;
+}
+td, th {
+    border: 1px solid gray;
+    text-align: left;
+    padding: 8px; /*thêm vào khoảng không cho thành phần*/
+}
+.text{
+    font-family: arial, sans-serif;
+    width: 305px;
+    height: 20px;
+}
+.button{
+    background-color: lightblue;
+    font-family: arial, sans-serif;
+    width: 100px;
+    height: 36px;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+div.form-student,div.list-student {
+    width: 500px;
+    border: 1px solid #ccc;
+    margin: 25px;
+    padding: 10px;
+}
+div.list-student {
+    width: 650px;
+}
+h3 {
+    padding: 5px;
+    margin-top: 0px;
+}
+div.form-student label {
+    width: 100px;
+    float: left;
+} div.form-student input[type="text"] {
+      margin-bottom: 10px;
+      width: 200px;
+      padding: 5px;
+  }
+table.button[type="button"] {
+    background: darkorange;
+}
