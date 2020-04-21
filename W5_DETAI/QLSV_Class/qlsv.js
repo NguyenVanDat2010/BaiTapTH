@@ -113,6 +113,15 @@ function deleteStudent(index) {
     //Nếu có (optionDelete trả về true) thì sẽ xóa, ko thì ko xóa
     if (optionDelete){
         students.splice(index,1);
+        //xóa trống bảng thông tin sinh viên trong trường nhập
+        document.getElementById("studentName").value='';
+        document.getElementById("studentEmail").value='';
+        document.getElementById("studentPhone").value='';
+        document.getElementById("studentAddress").value='';
+
+        //Bật tắt nút BUTTON
+        document.getElementById("btnEdit").disabled=true;
+        document.getElementById("btnAdd").disabled=false;
     }
     loadFullScreen();
 }
