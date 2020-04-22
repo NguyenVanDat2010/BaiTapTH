@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QLSP</title>
+    <link rel="stylesheet" href="qlsp.css">
+    <script src="qlsp.js"></script>
+</head>
+<body>
+<div>
+    <center>
+        <img src="image/immm.jpg" width="1500" , height="340">
+        <hr>
+    </center>
+    <div>
+        <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="add.html">Add product</a></li>
+            <li><a href="vegatable.html">Vegetable</a></li>
+            <li><a href="fruit.html">Fruit</a></li>
+            <li style="float:right"><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+</div>
+<div>
+    <div style="float: left; width: 400px">
+        <h2>Add fruit</h2>
+        <form name="product">
+            <fieldset style="width: 330px">
+                <legend>Add Fruit</legend>
+                <label>ID: </label><br>
+                <input style="border-radius: 20px" type="text" id="fruitId" name="fruitId" placeholder="Please Enter the Fruit ID"><br>
+                <hr>
+                <label>Name: </label><br>
+                <input style="border-radius: 20px" type="text" id="fruitName" name="fruitName" placeholder="Please Enter Fruit Name"><br>
+                <hr>
+                <label>Price: </label><br>
+                <input style="border-radius: 20px" type="text" id="fruitPrice" name="fruitPrice" placeholder="Please Enter Fruit price"><br>
+                <hr>
+                <label>Source: </label><br>
+                <input style="border-radius: 20px" type="text" id="fruitSource" name="fruitSource" placeholder="Please Enter Fruit Source"><br>
+                <hr>
+
+                <label>Image: </label><br>
+                <input style="border-radius: 20px" type="text" id="fruitImage" name="fruitImage" placeholder="Please Enter Fruit Image"><br>
+                <hr>
+                <hr>
+                <center>
+                    <button style="border-radius: 100px; height: 30px; width: 100px " id="btnAdd" type="button" value="Add" onclick="addFruit()">submit</button>
+                    <button style="width: 100px; height: 30px" id="btnEdit" type="button" value="Add" onclick="saveFruit()" disabled>Lưu Lại</button>
+                </center>
+            </fieldset>
+        </form>
+    </div>
+    <div style="float: left; width: 900px">
+        <h2>Display all fruit</h2>
+        <table border="1px" style="width: 900px"  id="pageMStudent">
+            <thead>
+            <tr style="background-color: lightsalmon; border: darkblue">
+                <th>Fruit ID</th>
+                <th width="150px"> Name</th>
+                <th width="200px">Price </th>
+                <th width="140px">Source</th>
+                <th width="200px">Images</th>
+                <th width="60px">Edit</th>
+                <th width="60px">Delete</th>
+            </tr>
+            </thead>
+            <tbody id="detailList">
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
