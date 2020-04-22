@@ -96,18 +96,16 @@ function addFruit() {
 }
 
 let row = "";
-
 function loadFullScreen() {
     row = "";
     for (let i = 0; i < fruitList.length; i++) {
         row += "<tr><td>" + fruitList[i].getId() + "</td><td>" + fruitList[i].getName()
             + "</td><td>" + fruitList[i].getPrice() + "</td><td>" + fruitList[i].getSource()
             + "</td><td><center><img height='200px' src="+fruitList[i].getImage()+"></center> </td>"
-            + "<td><center><button id='btnEdit' onclick='edit(" + i + ")'>Edit</button></center></td>"
-            + "<td><center><button  onclick=' fruitDelete(" + i + ")'>Delete</button></center></td></tr>";
-        document.getElementById("detailList").innerHTML = row;
+            + "<td><center><button onclick='edit(" + i + ")'>Edit</button></center></td>"
+            + "<td><center><button onclick=' fruitDelete(" + i + ")'>Delete</button></center></td></tr>";
     }
-
+    document.getElementById("detailList").innerHTML = row;
 }
 let ret;
 function edit(index) {
@@ -122,6 +120,7 @@ function edit(index) {
     document.getElementById("btnEdit").disabled = false;
     document.getElementById("btnAdd").disabled = true;
 }
+
 function saveFruit(index) {
     index = ret ;
     console.log(index)
