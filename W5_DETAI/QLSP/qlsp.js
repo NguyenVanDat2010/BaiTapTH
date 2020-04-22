@@ -159,6 +159,7 @@ function saveFruit(index) {
 
 function fruitDelete(index) {
     let del = confirm("Bạn chắc chắn muốn xóa sản phẩm ko?");
+    console.log(index);
     if (del) {
         fruitList.splice(index, 1);
 
@@ -167,6 +168,9 @@ function fruitDelete(index) {
         document.getElementById("fruitPrice").value='';
         document.getElementById("fruitSource").value='';
         document.getElementById("fruitImage").value='';
+
+        document.getElementById("btnEdit").disabled = true;
+        document.getElementById("btnAdd").disabled = false;
     }
     loadFullScreen();
 }
