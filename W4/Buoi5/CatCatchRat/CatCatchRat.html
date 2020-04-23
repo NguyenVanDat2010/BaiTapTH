@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat Catch Watch</title>
+    <script src="Cat.js"></script>
+    <script src="Rat.js"></script>
+</head>
+<body>
+<script>
+    let cat=new Cat('Tom',20,60);
+    cat.soundCat();
+
+    let rat=new Rat('Jerry',10,40);
+    rat.soundRat();
+
+    cat.catchRat(rat);
+    cat.eatRat(rat);
+    console.log(cat.weightCat)
+</script>
+
+</body>
+</html>
