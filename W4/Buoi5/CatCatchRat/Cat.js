@@ -9,6 +9,7 @@ let Cat=function (name,weightCat,speedCat) {
     this.catchRat=function (rat) {
         if (this.speedCat>rat.speedRat){
             alert("Meo "+this.name+" bắt đc chuột "+rat.name)
+            rat.status=false;
         }else {
             alert("Meo "+this.name+" ko bắt đc chuột "+rat.name)
         }
