@@ -16,6 +16,7 @@
 </form>
 
 <script>
+    //sự kiện chuột
     function goLeft() {
         let left= document.getElementById("nobita");
         left.style.left=parseInt(left.style.left) - 10 +'px';
@@ -32,6 +33,8 @@
         let down = document.getElementById("nobita");
         down.style.top=parseInt(down.style.top)+ 10 +'px';
     }
+
+    //sự kiện bàn phím
     function moveSelection(evt) {
         switch (evt.keyCode) {
             case 37 :

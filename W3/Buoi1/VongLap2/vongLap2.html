@@ -10,115 +10,116 @@
    // Bài 01:  In dãy Finonaci
     let n=Number(prompt("Nhập n: "));
     let f0=0,f1=1;
-    document.write(n+" số fibonacci đầu tiên là: "+f0+' '+f1)
+    document.write(n+" số fibonacci đầu tiên là: "+f0+' '+f1);
     for (let i=0;i<(n-2);i++){
         let f2 = f0+f1;
         document.write(' '+f2);
-        f0=f1;f1=f2;
+        f0=f1;
+        f1=f2;
     }
 
-
-    //Bai 02:Tính giai thừa của một số nguyên dương
-    let result = n = Number(prompt("Nhập n: "));
-    while(n<=0){
-        n=Number(prompt("Nhập lại n: "));
-    }
-    if(n==0||n==1){
-        document.write(n+'! = 1')
-    }
-    while(n>1){
-        n--;
-        result*=n;
-    }
-    document.write(result);
-
-
-    //Bai 03:In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau
-
-    //tam giác vuông trong
-    let width=5;
-    for (let i=4;i>=0;i--){
-        for (let j=0;j<(width-i);j++){
-            document.write("*");
-        }
-        document.write("<br>")
-    }
-
-    //tam giác ngược vuông trong
-    //let width=5;
-    for (let i=1;i<=width;i++){
-        for (let j=0;j<=(width-i);j++){
-            document.write("*")
-        }
-        document.write("<br>")
-    }
-
-    //tam giác vuông ngoài
-    //let width=5;
-    for (let i=1;i<=width;i++){
-        for (let j=0;j<(width-i);j++){
-            document.write('&ensp;')
-        }
-        for (let n =1;n<=i;n++){
-            document.write("*")
-        }
-        document.write("<br>")
-    }
-
-    //tam giác ngược vuông ngoài
-    //let width=5;
-    for (let i=5;i>=1;i--){
-        for (let j=0;j<(width-i);j++){
-            document.write("&ensp;")
-        }
-        for (let n=1;n<=i;n++){
-            document.write("*")
-        }
-        document.write("<br>")
-    }
-
-    //Bài 04: In hình chữ nhật
-    let width=5,height=15;
-    for (let i=1;i<=width;i++){
-        for (let j=1;j<=height;j++){
-            if (i==1||i==width||j==1||j==height){
-                document.write("*");
-            }else {
-                document.write("&ensp;")
-            }
-        }
-        document.write("<br>")
-    }
-
-
-    //Bai 05:
-
-    //Bai 06: In hình trái tim
-    let i,j,size=11;
-    for (i=(size/2);i<=size;i+=2){
-        for (j=1;j<(size-i);j+=2){
-            document.write("&ensp;");
-        }
-        for (j=1;j<=i;j++){
-            document.write("*");
-        }
-        for (j=1;j<=(size-i);j++){
-            document.write("&ensp;");
-        }
-        for (j=1;j<i;j++){
-            document.write("*");
-        }
-        document.write("<br>");
-    }
-    for(i=size;i>=0;i--){
-        for (j=i;j<size;j++){
-            document.write("&ensp;");
-        }
-        for (j=1;j<=((i*2)-1);j++){
-            document.write("*");
-        }
-        document.write("<br>");
-    }
+    //
+    // //Bai 02:Tính giai thừa của một số nguyên dương
+    // let result = n = Number(prompt("Nhập n: "));
+    // while(n<=0){
+    //     n=Number(prompt("Nhập lại n: "));
+    // }
+    // if(n==0||n==1){
+    //     document.write(n+'! = 1')
+    // }
+    // while(n>1){
+    //     n--;
+    //     result*=n;
+    // }
+    // document.write(result);
+    //
+    //
+    // //Bai 03:In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau
+    //
+    // //tam giác vuông trong
+    // let width=5;
+    // for (let i=4;i>=0;i--){
+    //     for (let j=0;j<(width-i);j++){
+    //         document.write("*");
+    //     }
+    //     document.write("<br>")
+    // }
+    //
+    // //tam giác ngược vuông trong
+    // //let width=5;
+    // for (let i=1;i<=width;i++){
+    //     for (let j=0;j<=(width-i);j++){
+    //         document.write("*")
+    //     }
+    //     document.write("<br>")
+    // }
+    //
+    // //tam giác vuông ngoài
+    // //let width=5;
+    // for (let i=1;i<=width;i++){
+    //     for (let j=0;j<(width-i);j++){
+    //         document.write('&ensp;')
+    //     }
+    //     for (let n =1;n<=i;n++){
+    //         document.write("*")
+    //     }
+    //     document.write("<br>")
+    // }
+    //
+    // //tam giác ngược vuông ngoài
+    // //let width=5;
+    // for (let i=5;i>=1;i--){
+    //     for (let j=0;j<(width-i);j++){
+    //         document.write("&ensp;")
+    //     }
+    //     for (let n=1;n<=i;n++){
+    //         document.write("*")
+    //     }
+    //     document.write("<br>")
+    // }
+    //
+    // //Bài 04: In hình chữ nhật
+    // let width=5,height=15;
+    // for (let i=1;i<=width;i++){
+    //     for (let j=1;j<=height;j++){
+    //         if (i==1||i==width||j==1||j==height){
+    //             document.write("*");
+    //         }else {
+    //             document.write("&ensp;")
+    //         }
+    //     }
+    //     document.write("<br>")
+    // }
+    //
+    //
+    // //Bai 05:
+    //
+    // //Bai 06: In hình trái tim
+    // let i,j,size=11;
+    // for (i=(size/2);i<=size;i+=2){
+    //     for (j=1;j<(size-i);j+=2){
+    //         document.write("&ensp;");
+    //     }
+    //     for (j=1;j<=i;j++){
+    //         document.write("*");
+    //     }
+    //     for (j=1;j<=(size-i);j++){
+    //         document.write("&ensp;");
+    //     }
+    //     for (j=1;j<i;j++){
+    //         document.write("*");
+    //     }
+    //     document.write("<br>");
+    // }
+    // for(i=size;i>=0;i--){
+    //     for (j=i;j<size;j++){
+    //         document.write("&ensp;");
+    //     }
+    //     for (j=1;j<=((i*2)-1);j++){
+    //         document.write("*");
+    //     }
+    //     document.write("<br>");
+    // }
 
 
 </script>

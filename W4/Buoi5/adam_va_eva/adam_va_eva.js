@@ -1,16 +1,21 @@
 let Apple = function (weightApple) {
+     // this.status=status;
      this.weightApple=weightApple;
+
+     // this.setWeightApple=function (weightApple) {
+     //     this.weightApple=weightApple;
+     // };
 
     this.decreaseApple=function () {
         if (this.weightApple>0){
-            this.weightApple=0;
+            this.weightApple--;
         }
     };
     this.isEmpty=function () {
         if (this.weightApple>0){
-            this.weightApple=true;
+            this.status=true;
         }else {
-            this.weightApple=false;
+            this.status=false;
         }
     };
     this.getWeight=function () {
@@ -18,28 +23,30 @@ let Apple = function (weightApple) {
     };
 };
 
-let Human=function (name,gender,weightHuman,weightApple) {
+let Human=function (name,gender,weightHuman) {
     this.name=name;
     this.gender=gender;
     this.weightHuman=weightHuman;
-    this.weightApple=weightApple;
+    // this.status=status;
+    //this.weightApple=weightApple;
 
-    this.checkApple=function () {
-        return this.weightApple.isEmpty();
+    this.checkApple=function (weightApple) {
+
     };
 
     this.eat=function () {
-        if (this.weightApple){
-            this.weightHuman += this.weightApple;
-            console.log(this.weightHuman);
-            alert(this.name+" đã ăn hết táo.")
+        if (this.status){
+            this.weightHuman ++;
+            this.decreaseApple();
+            alert(this.name+" đã ăn một miếng táo.");
         }else {
-            alert("Không có táo.")
+            alert("Có táo mô mà ăn.")
         }
+        console.log(this.weightApple)
     };
 
     this.say=function () {
-        if (this.weightHuman>0){
+        if (this.weightHuman>40){
             alert(this.name+" cười hahaha")
         }
     };
@@ -58,10 +65,11 @@ let Human=function (name,gender,weightHuman,weightApple) {
     }
 };
 let apple=new Apple(10);
-// apple.setWeightApple(10);
+// apple.setWeightApple(0);
 
 let human= new Human('Tuấn Anh','male',45,apple);
 human.say();
 human.eat();
 
 document.write(human.getWeight());
+document.write(human.weightApple);

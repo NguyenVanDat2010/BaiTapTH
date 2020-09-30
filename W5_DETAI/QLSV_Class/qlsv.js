@@ -11,6 +11,7 @@ let student = function (studentName, studentEmail, studentPhone, studentAddress)
     // this.getId = function() {
     //     return this.id;
     // };
+
     this.getStudentName = function () {
         return this.sutdentName;
     };
@@ -26,6 +27,7 @@ let student = function (studentName, studentEmail, studentPhone, studentAddress)
     // this.setId=function (idStudent) {
     //     this.id=idStudent;
     // };
+
     this.setStudentName = function (sutdentName) {
         this.sutdentName = sutdentName;
     };
@@ -41,7 +43,11 @@ let student = function (studentName, studentEmail, studentPhone, studentAddress)
 };
 // let count = 0;
 let k=0;
-let students = [];
+let students =[];
+    // ['Nguyễn Hải Nam','nguyenhainam@gmail.com','0967853525','Kỳ Anh, Hà Tĩnh'];
+//     ['Nguyễn Minh Hiếu','nguyenminhhieu@gmail.com','0969995523','Phong Đình Cảng, Tp.Vinh'],
+//     ['Hoàng Thanh Long','hoangthanhlong@gmail.com','0359456596','Trần Duy Hưng, Hà Nội'],
+// ];
 function addStudent() {
     let studentName = document.getElementById("studentName").value;
     let studentEmail = document.getElementById("studentEmail").value;
@@ -76,6 +82,7 @@ function loadFullScreen() {
     row = "";
     row+='<table >'+'<tr>' +
         '<th>STT</th>'+
+        // '<th>Ảnh đại diện</th>'+
         '<th>Họ và tên</th>'+
         '<th>Email</th>'+
         '<th>Số điện thoại</th>'+
@@ -85,6 +92,8 @@ function loadFullScreen() {
         '</tr>';
     for (let i = 0;i <students.length;i++){
         row +="<tr><td>"+(i+1)+
+            // "</td><td>" +'<input type="file" onchange = "changeHandler(event)"><br>\n' +
+            // '<img id="myimage" src="">'+
             "</td><td>" +students[i].getStudentName()+
             "</td><td>" +students[i].getStudentEmail() +
             "</td><td>" +students[i].getStudentPhone() +
@@ -176,3 +185,22 @@ function resetStudent() {
     document.getElementById("studentPhone").value='';
     document.getElementById("studentAddress").value='';
 }
+
+//upload ảnh lên trình duyệt--------------------------------------------------------------------------------------------
+// function changeHandler(evt) {
+//     evt.stopPropagation();
+//     evt.preventDefault();
+//
+//     // FileList object.
+//     var files = evt.target.files;
+//     var file = files[0];
+//     var fileReader = new FileReader();
+//
+//     fileReader.onload = function(progressEvent) {
+//         var url = fileReader.result;
+//         var myImg = document.getElementById("myimage");
+//         myImg.src= url;
+//     };
+//     // Read file asynchronously.
+//     fileReader.readAsDataURL(file); // fileReader.result -> URL.
+// }

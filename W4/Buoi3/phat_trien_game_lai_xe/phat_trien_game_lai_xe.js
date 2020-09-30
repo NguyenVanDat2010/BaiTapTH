@@ -6,6 +6,10 @@ const ORIENTATION_RIGHT = "right";
 const ORIENTATION_UP = "up";
 const ORIENTATION_DOWN = "down";
 
+const NINJA_WIDTH = 100;
+const NINJA_HEIGHT = 47;
+
+
 const DEFAULT_CAR_X_POSITION = 600;
 const DEFAULT_CAR_Y_POSITION = 250;
 // const DEFAULT_CAR_ORIENTATION = ORIENTATION_UP;
@@ -38,7 +42,6 @@ let Car = function () {
             case ORIENTATION_RIGHT:
                 this.xPosition+=this.speed;
                 break;
-
         }
         this.buildImage();
     };
@@ -54,6 +57,7 @@ let Car = function () {
         let yPosition=this.yPosition;
         imageCar.onload = function () {
             context.drawImage(imageCar,xPosition,yPosition);
+            // context.drawImage(imageCar,xPosition,yPosition,NINJA_WIDTH ,NINJA_HEIGHT);
             // console.log(xPosition);
             // console.log(yPosition);
         };

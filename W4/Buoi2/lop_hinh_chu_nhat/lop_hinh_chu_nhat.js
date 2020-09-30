@@ -12,7 +12,7 @@ let Rectangle=function (width,height) {
         let context=document.getElementById("myCanvas").getContext("2d");
         context.beginPath();
         context.strokeStyle='red';
-        context.strokeRect(0,0,this.width,this.height);
+        context.strokeRect(30,30,this.width,this.height);
         // context.fillStyle='blue';
         // context.fillRect(0,0,this.width,this.height);
         context.stroke();
@@ -23,10 +23,10 @@ let Rectangle=function (width,height) {
     };
 };
 
-let hcn=new Rectangle(20,10);
+let hcn=new Rectangle(120,60);
 alert("Diện tích hcn là: "+hcn.getArea()+", Chu vi: "+hcn.getPremeter());
 
-hcn.setWidthAndHeight(30,60);
-alert("Diện tích hcn là: "+hcn.getArea()+", Chu vi: "+hcn.getPremeter());
+// hcn.setWidthAndHeight(30,60);
+// alert("Diện tích hcn là: "+hcn.getArea()+", Chu vi: "+hcn.getPremeter());
 
 hcn.getCanvas();

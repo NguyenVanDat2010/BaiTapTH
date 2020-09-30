@@ -18,13 +18,13 @@
         board[i]=[0,0,0,0,0];
     }
     //duyệt mảng
-    for (let i=0;i<5;i++){
+    for (let i=0;i<5;i++){                                              //for (let i=0;i<board.length;i++)
         data +="<br/>";
-        for (let j=0;j<5;j++){
+        for (let j=0;j<5;j++){                                      //for (let j=0;j<board[i].length;j++)
             data+=board[i][j]+'&nbsp;&nbsp;&nbsp;&nbsp;';
         }
     }
-    data += "<br/><br/>"; //data += "<br/><br/><input type='button' value='Change value' onclick='changeValue();'>";
+    data += "<br/><br/>";        //data += "<br/><br/><input type='button' value='Change value' onclick='changeValue();'>";
     a.innerHTML = data;
 
 
@@ -39,7 +39,7 @@
                 data+=board[i][j]+"&nbsp;&nbsp;&nbsp;&nbsp;";
             }
         }
-        data += "<br/><br/>";  //data += "<br/><br/><input type='button' value='Change value' onclick='changeValue();'>";
+        data += "<br/><br/>";           //data += "<br/><br/><input type='button' value='Change value' onclick='changeValue();'>";
         a.innerHTML = "<hr/>" + data;
     }
 </script>

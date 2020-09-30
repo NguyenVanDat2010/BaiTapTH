@@ -11,7 +11,7 @@ let Circle=function (radius) {
     this.drawCanvas=function () {
         let canvas=document.getElementById("myCanvas");
         let ctx=canvas.getContext("2d");
-        ctx.beginPath();
+        ctx.beginPath();// Khai báo vẽ đường thẳng mới
         ctx.strokeStyle='Green';// Màu của đường viền
         ctx.fillStyle='yellow';//màu muốn đổ (tô)
         ctx.arc(200,100,this.radius,0,2*Math.PI);

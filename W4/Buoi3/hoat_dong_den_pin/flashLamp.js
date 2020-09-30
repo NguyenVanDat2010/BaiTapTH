@@ -1,4 +1,5 @@
 function Battery() {
+
     this.setEnergy=function (energy) {
         this.energy=energy;
     };
